@@ -31,13 +31,141 @@
     </header>
 
 
-    <section class="schedule-panel">
+    <section class="schedule-panel">  
       <div
         id="scheduleGrid"
         class="schedule-grid"
         aria-label="课程表"
       ></div>
     </section>
+
+    <!-- 课程详情弹窗 -->
+      <div id="courseModal" class="course-modal hidden" aria-hidden="true">
+
+    <!-- 点击这里可以关闭弹窗 -->
+    <div class="course-modal-backdrop"></div>
+
+    <section
+      class="course-detail"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detailCourseName"
+    >
+
+      <button
+        id="closeCourseModal"
+        class="course-detail-close"
+        type="button"
+        aria-label="关闭课程详情"
+      >
+        ×
+      </button>
+
+
+      <!-- 课程基本信息 -->
+
+      <p class="detail-eyebrow">课程详情</p>
+
+      <h2 id="detailCourseName"></h2>
+
+      <div class="course-detail-info">
+
+        <p>
+          <span class="detail-label">教师</span>
+          <span id="detailTeacher"></span>
+        </p>
+
+        <p>
+          <span class="detail-label">地点</span>
+          <span id="detailLocation"></span>
+        </p>
+
+        <p>
+          <span class="detail-label">时间</span>
+          <span id="detailTime"></span>
+        </p>
+
+        <p>
+          <span class="detail-label">日期</span>
+          <span id="detailDate"></span>
+        </p>
+
+        <p>
+          <span class="detail-label">类型</span>
+          <span id="detailCourseType"></span>
+        </p>
+
+      </div>
+
+
+      <!-- 翘课指数区域 -->
+
+      <section class="skip-index-section">
+
+        <div class="skip-index-title">
+          <div>
+            <p class="skip-index-eyebrow">Skip Index</p>
+            <h3>翘课指数</h3>
+          </div>
+        </div>
+
+
+        <!-- 已经存在评分时显示 -->
+
+        <div id="skipResult" class="skip-result hidden">
+
+          <div class="skip-score-row">
+
+            <div>
+              <span id="skipScore" class="skip-score">78</span>
+              <span class="skip-score-unit">/ 100</span>
+            </div>
+
+            <div id="skipLevel" class="skip-level">
+              比较适合翘
+            </div>
+
+          </div>
+
+          <p id="skipEvaluatedTime" class="skip-evaluated-time"></p>
+
+        </div>
+
+
+        <!-- 没有评分，或者点击重新评估以后显示 -->
+
+        <div id="skipQuestionnaire" class="skip-questionnaire hidden">
+
+          <p class="questionnaire-description">
+            正式问卷将在下一步加入。现在先使用模拟评分测试完整交互。
+          </p>
+
+          <button
+            id="simulateSkipResult"
+            class="skip-primary-button"
+            type="button"
+          >
+            模拟完成评估（78 分）
+          </button>
+
+        </div>
+
+
+        <!-- 有评分以后显示 -->
+
+        <button
+          id="retestSkipIndex"
+          class="skip-secondary-button hidden"
+          type="button"
+        >
+          重新评估
+        </button>
+
+      </section>
+
+    </section>
+
+  </div>
 
   </main>
 
