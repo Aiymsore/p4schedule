@@ -1,0 +1,175 @@
+/* ---------- 页面基础 ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fa;
+  color: #1f2937;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Microsoft YaHei",
+    sans-serif;
+}
+
+.page {
+  width: min(1180px, calc(100% - 40px));
+  margin: 40px auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #8a94a6;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.semester {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* ---------- 课表容器 ---------- */
+
+.schedule-panel {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+/*
+  8 列：
+  第 1 列 = 节次
+  后 7 列 = 周一 ~ 周日
+
+  13 行：
+  第 1 行 = 星期表头
+  后 12 行 = 第 1 ~ 12 节
+*/
+.schedule-grid {
+  position: relative;
+  display: grid;
+
+  grid-template-columns:
+    88px
+    repeat(7, minmax(125px, 1fr));
+
+  grid-template-rows:
+    58px
+    repeat(12, 76px);
+
+  min-width: 980px;
+}
+
+
+/* ---------- 空表格 ---------- */
+
+.grid-cell {
+  border-right: 1px solid #e8ebf0;
+  border-bottom: 1px solid #e8ebf0;
+}
+
+.corner-cell,
+.day-header,
+.section-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafbfc;
+}
+
+.corner-cell,
+.day-header {
+  font-weight: 700;
+}
+
+.day-header {
+  font-size: 14px;
+}
+
+.section-label {
+  color: #7b8494;
+  font-size: 13px;
+}
+
+
+/* ---------- 课程卡片 ---------- */
+
+.course-card {
+  z-index: 2;
+
+  margin: 6px;
+  padding: 12px;
+
+  overflow: hidden;
+
+  border: 1px solid #c7d2fe;
+  border-radius: 12px;
+
+  background: #eef2ff;
+
+  box-shadow: 0 5px 14px rgba(79, 70, 229, 0.08);
+}
+
+.course-name {
+  margin-bottom: 7px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.course-meta {
+  color: #6366f1;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ---------- 状态信息 ---------- */
+
+.message {
+  grid-column: 2 / -1;
+  padding: 16px;
+  color: #6b7280;
+}
+
+
+/* ---------- 手机适配 ---------- */
+
+@media (max-width: 720px) {
+  .page {
+    width: calc(100% - 20px);
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .semester {
+    display: none;
+  }
+}

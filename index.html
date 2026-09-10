@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>课表</title>
+
+  <!-- CSS：只负责页面外观 -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="page">
+
+    <header class="page-header">
+
+      <div>
+        <p class="eyebrow">Schedule Demo</p>
+        <h1>课程表</h1>
+      </div>
+
+      <div class="week-switcher">
+        <button id="prevWeek">←</button>
+        <span id="weekLabel">第 1 周</span>
+        <button id="nextWeek">→</button>
+      </div>
+
+      <p class="semester">2026 秋季学期</p>
+
+    </header>
+
+
+    <section class="schedule-panel">
+      <div
+        id="scheduleGrid"
+        class="schedule-grid"
+        aria-label="课程表"
+      ></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
