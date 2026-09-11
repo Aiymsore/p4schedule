@@ -123,3 +123,98 @@
   font-size: 12px;
   line-height: 1.6;
 }
+
+
+/* ===== P4 SCHEDULE 4P UI Upgrade ===== */
+
+:root {
+  --p4-bg:#f8fafc;
+  --p4-primary:#7c3aed;
+  --p4-text:#111827;
+  --p4-sub:#64748b;
+}
+
+body{
+  background:var(--p4-bg);
+  color:var(--p4-text);
+}
+
+.page-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.eyebrow{
+  color:var(--p4-primary);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.5px;
+}
+
+.page-header h1{
+  font-size:32px;
+  letter-spacing:-0.5px;
+}
+
+.week-switcher{
+  background:white;
+  padding:8px 14px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(15,23,42,.08);
+}
+
+.week-switcher button{
+  border:none;
+  border-radius:50%;
+  background:#f1f5f9;
+  cursor:pointer;
+}
+
+.schedule-panel{
+  border-radius:24px;
+  box-shadow:0 15px 40px rgba(15,23,42,.08);
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(20px);
+}
+
+.day-header:nth-child(2){background:#dff6ff;}
+.day-header:nth-child(3){background:#dde7ff;}
+.day-header:nth-child(4){background:#ebdfff;}
+.day-header:nth-child(5){background:#ffe0ee;}
+.day-header:nth-child(6){background:#ffe9c7;}
+.day-header:nth-child(7){background:#b8f5d0;}
+.day-header:nth-child(8){background:#ffd1dc;}
+
+.course-card{
+  border:none;
+  border-radius:18px;
+  background:linear-gradient(145deg,#eef2ff,#ffffff);
+  box-shadow:0 8px 22px rgba(79,70,229,.1);
+  transition:.2s ease;
+}
+
+.course-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(79,70,229,.18);
+}
+
+.course-name{
+  font-weight:800;
+}
+
+.course-meta{
+  color:#64748b;
+}
+
+@media(max-width:700px){
+  .page-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .page-header h1{
+    font-size:26px;
+  }
+}

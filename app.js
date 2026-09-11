@@ -228,7 +228,21 @@ async function loadCourses() {
   return await response.json();
 }
 
+
+function highlightToday() {
+  const today = new Date().getDay();
+  const day = today === 0 ? 7 : today;
+
+  document.querySelectorAll(".day-header").forEach((header,index)=>{
+    if(index + 1 === day){
+      header.classList.add("today-header");
+      header.textContent += " · TODAY";
+    }
+  });
+}
+
 function renderBaseGrid() {
+
   const corner = document.createElement("div");
   corner.className = "grid-cell corner-cell";
   corner.textContent = "节次";
@@ -824,6 +838,7 @@ skipQuestionForm.addEventListener("submit", event => {
 
 async function main() {
   renderBaseGrid();
+  highlightToday();
 
   try {
     allCourses = await loadCourses();
