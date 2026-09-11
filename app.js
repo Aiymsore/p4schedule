@@ -228,37 +228,35 @@ async function loadCourses() {
   return await response.json();
 }
 
-
-function highlightToday() {
-  const today = new Date().getDay();
-  const day = today === 0 ? 7 : today;
-
-  document.querySelectorAll(".day-header").forEach((header,index)=>{
-    if(index + 1 === day){
-      header.classList.add("today-header");
-      header.textContent += " · TODAY";
-    }
-  });
-}
-
 function renderBaseGrid() {
-
   const corner = document.createElement("div");
   corner.className = "grid-cell corner-cell";
   corner.textContent = "节次";
   scheduleGrid.appendChild(corner);
 
-  DAYS.forEach(day => {
+  DAYS.forEach((day, index) => {
     const header = document.createElement("div");
     header.className = "grid-cell day-header";
     header.textContent = day;
+    header.dataset.weekday = index + 1;
     scheduleGrid.appendChild(header);
   });
+
+  const today = new Date().getDay() || 7;
+  const todayHeader = scheduleGrid.querySelector(
+    `.day-header[data-weekday="${today}"]`
+  );
+  if (todayHeader) {
+    todayHeader.classList.add("today-header");
+    todayHeader.innerHTML += "<small>TODAY</small>";
+  }
 
   for (let section = 1; section <= TOTAL_SECTIONS; section++) {
     const sectionLabel = document.createElement("div");
     sectionLabel.className = "grid-cell section-label";
     sectionLabel.textContent = `第 ${section} 节`;
+    sectionLabel.style.gridColumn = "1";
+    sectionLabel.style.gridRow = `${section + 1}`;
     scheduleGrid.appendChild(sectionLabel);
 
     for (let weekday = 1; weekday <= 7; weekday++) {
@@ -838,7 +836,6 @@ skipQuestionForm.addEventListener("submit", event => {
 
 async function main() {
   renderBaseGrid();
-  highlightToday();
 
   try {
     allCourses = await loadCourses();
