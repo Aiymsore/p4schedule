@@ -749,12 +749,21 @@ h1 {
 
   /* Today card */
   .today-card{
-    margin:16px;
-    min-height:160px;
-    border-radius:28px;
-    padding:18px 24px;
-    box-shadow:0 12px 35px rgba(15,23,42,.08);
-  }
+  margin:0 0 22px;
+  padding:18px 24px;
+
+  border-radius:26px;
+
+  /* 淡蓝白背景 */
+  background:#f8fafc;
+
+  /* 黑色细边框 */
+  border:1px solid #111827;
+
+  /* 非彩色阴影 */
+  box-shadow:
+    0 10px 30px rgba(15,23,42,.08);
+}
 
   /* Keep full week schedule on mobile */
   .schedule-panel{
