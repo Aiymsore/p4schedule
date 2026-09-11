@@ -43,8 +43,9 @@ input:focus-visible,
 }
 
 .page-header {
+  position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 20px;
@@ -71,6 +72,9 @@ h1 {
 }
 
 .week-switcher {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -689,13 +693,13 @@ h1 {
 }
 .today-title{
   color:#7c3aed;
-  font-size:12px;
+  font-size:10px;
   font-weight:800;
-  letter-spacing:.15em;
+  letter-spacing:.2em;
 }
 .today-day{
   margin-top:4px;
-  font-size:26px;
+  font-size:22px;
   font-weight:800;
 }
 .today-content{
@@ -748,7 +752,7 @@ h1 {
     margin:16px;
     min-height:160px;
     border-radius:28px;
-    padding:24px;
+    padding:18px 24px;
     box-shadow:0 12px 35px rgba(15,23,42,.08);
   }
 
@@ -854,7 +858,7 @@ h1 {
   }
 
   .today-card h2{
-    font-size:30px;
+    font-size:24px;
     margin:4px 0;
   }
 
