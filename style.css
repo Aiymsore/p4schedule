@@ -838,39 +838,52 @@ h1 {
 }
 
 
-/* ===== P4 SCHEDULE v7 Mobile 5 Days Layout ===== */
+/* ===== v9 Mobile Horizontal Week Scroll ===== */
+/* Keep all 7 days. Initial view shows about 5 days, swipe right for weekend. */
 
 @media (max-width:768px){
 
-  /* Today 卡片压缩 */
-  .today-card{
-    min-height:110px;
-    padding:16px 20px;
-    border-radius:22px;
+  body{
+    overflow-x:hidden;
   }
 
-  .today-card h1,
+  .today-card{
+    min-height:120px;
+    padding:16px 20px;
+    border-radius:24px;
+  }
+
   .today-card h2{
+    font-size:30px;
     margin:4px 0;
   }
 
-  .today-card .course-name{
-    font-size:20px;
+  .today-card .today-label,
+  .today-card .eyebrow{
+    font-size:11px;
+    letter-spacing:.12em;
   }
 
-  /* 手机只展示周一到周五 */
+  .schedule-panel{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  /* Keep seven days but compact enough to show five */
   .schedule-grid{
-    min-width:0;
-    width:100%;
-    grid-template-columns:34px repeat(5,1fr);
+    min-width:520px;
+    grid-template-columns:34px repeat(7,70px);
   }
 
-  /* 节次只显示数字 */
+  /* Do not hide Saturday/Sunday */
+  .saturday,
+  .sunday{
+    display:block;
+  }
+
   .section-label{
+    width:34px;
     font-size:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
   }
 
   .section-label::after{
@@ -878,21 +891,19 @@ h1 {
     font-size:12px;
   }
 
-  /* 课程卡进一步压缩 */
   .course-card{
-    padding:5px;
-    border-radius:10px;
-    min-height:55px;
+    padding:6px;
+    border-radius:12px;
+    min-height:65px;
   }
 
   .course-name{
     font-size:11px;
-    line-height:1.15;
+    line-height:1.2;
   }
 
   .course-meta{
     font-size:9px;
-    line-height:1.15;
+    line-height:1.2;
   }
-
 }
