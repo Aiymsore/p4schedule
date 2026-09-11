@@ -830,6 +830,36 @@ skipQuestionForm.addEventListener("submit", event => {
   renderCurrentWeek();
 });
 
+
+function updateTodayCard() {
+  const dayNames = ["周日","周一","周二","周三","周四","周五","周六"];
+  const today = new Date().getDay();
+  const todayWeekday = today === 0 ? 7 : today;
+
+  const dayEl = document.getElementById("todayDay");
+  const courseEl = document.getElementById("todayCourse");
+  const infoEl = document.getElementById("todayInfo");
+
+  if (!dayEl || !courseEl || !infoEl || !allCourses.length) return;
+
+  dayEl.textContent = dayNames[today];
+
+  const todayCourses = allCourses.filter(
+    c => c.week === currentWeek && c.weekday === todayWeekday
+  );
+
+  if (todayCourses.length === 0) {
+    courseEl.textContent = "暂无课程";
+    infoEl.textContent = "今天没有安排课程";
+    return;
+  }
+
+  const c = todayCourses[0];
+  courseEl.textContent = c.course;
+  infoEl.textContent =
+    `${c.location} · 第 ${c.periods[0]}-${c.periods[c.periods.length-1]} 节`;
+}
+
 // =========================================================
 // 页面入口
 // =========================================================
@@ -846,6 +876,7 @@ async function main() {
 
     currentWeek = calculateCurrentWeek();
     renderCurrentWeek();
+    updateTodayCard();
   } catch (error) {
     console.error("课程加载失败：", error);
 

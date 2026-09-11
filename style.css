@@ -677,3 +677,50 @@ h1 {
    border-radius:28px 28px 0 0;
  }
 }
+
+
+/* Today Card */
+.today-card{
+  margin:0 0 22px;
+  padding:22px 26px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#eef2ff,#ffffff);
+  box-shadow:0 12px 35px rgba(79,70,229,.12);
+}
+.today-title{
+  color:#7c3aed;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.15em;
+}
+.today-day{
+  margin-top:4px;
+  font-size:26px;
+  font-weight:800;
+}
+.today-content{
+  margin-top:12px;
+}
+.today-content span{
+  color:#64748b;
+  font-size:13px;
+}
+.today-content strong{
+  display:block;
+  margin-top:4px;
+  font-size:20px;
+}
+.today-content p{
+  margin:5px 0 0;
+  color:#64748b;
+}
+
+.today-header{
+  background:#ede9fe !important;
+  color:#7c3aed;
+}
+.today-header small{
+  display:block;
+  font-size:10px;
+  letter-spacing:.08em;
+}

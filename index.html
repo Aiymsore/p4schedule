@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>课表</title>
+  <title>P4 SCHEDULE 4P</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,7 +13,7 @@
     <header class="page-header">
       <div>
         <p class="eyebrow">Schedule Demo</p>
-        <h1>课程表</h1>
+        <h1>P4 SCHEDULE 4P</h1>
       </div>
 
       <div class="week-switcher" aria-label="周数切换">
@@ -24,6 +24,16 @@
 
       <p class="semester">2026 秋季学期</p>
     </header>
+
+    <section id="todayCard" class="today-card">
+      <div class="today-title">TODAY</div>
+      <div id="todayDay" class="today-day"></div>
+      <div class="today-content">
+        <span>今日课程</span>
+        <strong id="todayCourse">暂无课程</strong>
+        <p id="todayInfo"></p>
+      </div>
+    </section>
 
     <section class="schedule-panel">
       <div
