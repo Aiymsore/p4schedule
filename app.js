@@ -255,6 +255,7 @@ function renderBaseGrid() {
     const sectionLabel = document.createElement("div");
     sectionLabel.className = "grid-cell section-label";
     sectionLabel.textContent = `第 ${section} 节`;
+    sectionLabel.dataset.section = section;
     sectionLabel.style.gridColumn = "1";
     sectionLabel.style.gridRow = `${section + 1}`;
     scheduleGrid.appendChild(sectionLabel);
