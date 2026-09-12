@@ -197,12 +197,23 @@ h1 {
 .course-skip-index {
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   margin-top: 8px;
   padding: 4px 7px;
   border-radius: 7px;
   background: rgba(255, 255, 255, 0.78);
   font-size: 11px;
   font-weight: 800;
+}
+
+/* 层级圆点：颜色跟随 .level-N 的 currentColor */
+.course-skip-index .skip-dot {
+  display: none;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .course-skip-index.level-1 {
@@ -918,5 +929,41 @@ h1 {
   .course-meta{
     font-size:9px;
     line-height:1.2;
+  }
+}
+
+/* ===== v10 Mobile: align week-switcher right edge with schedule panel ===== */
+
+@media (max-width:768px){
+
+  .week-switcher{
+    left:auto;
+    right:12px;
+    transform:scale(.9);
+    transform-origin:right center;
+  }
+}
+
+/* ===== v11 Mobile: skip-index badge = dot + score only ===== */
+
+@media (max-width:768px){
+
+  .course-skip-index{
+    margin-top:4px;
+    padding:2px 6px;
+    border-radius:6px;
+    font-size:10px;
+  }
+
+  /* 手机端隐藏“翘课指数”文字标签 */
+  .course-skip-index .skip-label{
+    display:none;
+  }
+
+  /* 手机端显示层级圆点，颜色沿用 level-1~5 的分数配色 */
+  .course-skip-index .skip-dot{
+    display:block;
+    width:7px;
+    height:7px;
   }
 }

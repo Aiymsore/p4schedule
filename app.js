@@ -684,7 +684,21 @@ function createCourseCard(course) {
   if (savedSkipResult) {
     const badge = document.createElement("div");
     badge.className = getSkipBadgeClass(savedSkipResult.score);
-    badge.textContent = `翘课指数 ${savedSkipResult.score}`;
+
+    const label = document.createElement("span");
+    label.className = "skip-label";
+    label.textContent = "翘课指数";
+    badge.appendChild(label);
+
+    const dot = document.createElement("span");
+    dot.className = "skip-dot";
+    badge.appendChild(dot);
+
+    const scoreValue = document.createElement("span");
+    scoreValue.className = "skip-score-value";
+    scoreValue.textContent = savedSkipResult.score;
+    badge.appendChild(scoreValue);
+
     card.appendChild(badge);
   }
 
