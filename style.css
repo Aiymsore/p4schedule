@@ -716,12 +716,19 @@ h1 {
   }
 
   .today-card{
+    /* 左右 12px 与 .schedule-panel 的 margin 对齐 */
+    margin:0 12px 22px;
     min-height:120px;
     padding:16px 20px;
     border:1px solid #111827;
     border-radius:24px;
     background:#f8fafc;
     box-shadow:0 10px 30px rgba(15,23,42,.08);
+  }
+
+  /* 今日日期等比缩小为原来的 1/2（22px → 11px），保持与下方“今日课程”左对齐 */
+  .today-day{
+    font-size:11px;
   }
 
   .schedule-panel{
