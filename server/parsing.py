@@ -34,6 +34,12 @@ COLUMN_ALIASES: dict[str, list[str]] = {
 
 WEEKDAY_CHAR_TO_NUMBER = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "日": 7, "天": 7}
 
+# 教务系统矩阵课表：第一大节~第七大节 → 大节序号
+GRID_SECTION_CHAR = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8}
+
+# 课表网格一行 = 一大节 = 两节小课
+MAX_PERIODS = 12
+
 
 class ParseError(ValueError):
     """解析失败，信息直接展示给用户。"""
@@ -231,6 +237,187 @@ def rows_to_entries(
 
 
 # ---------------------------------------------------------------------------
+# 矩阵式课表（教务系统网格导出）
+#
+# 结构：每 11 行一块，块内依次为标题行、"周次日期"表头行、日期行、"星期"行、
+# 第一~第七大节行。列按每 7 列一组对应一个周次；单元格内容为
+# "课程名[类型]\r\n教师\r\n周-节次码\r\n地点"。
+# ---------------------------------------------------------------------------
+
+def looks_like_grid(rows: list[list[Any]]) -> bool:
+    """任意单元格出现『第N周』即认为是矩阵课表。"""
+    for row in rows[:30]:
+        for cell in row:
+            if re.search(r"第\d+周", str(cell)):
+                return True
+    return False
+
+
+def parse_grid_section_number(label: str) -> int | None:
+    match = re.search(r"第(.+?)大节", label)
+    if not match:
+        return None
+    token = match.group(1).strip()
+    if token.isdigit():
+        return int(token)
+    return GRID_SECTION_CHAR.get(token)
+
+
+def parse_grid_cell(cell_text_value: str) -> dict | None:
+    """解析单元格 → {course, course_type, teacher, periods, location}。"""
+    lines = [line.strip() for line in re.split(r"[\r\n]+", str(cell_text_value)) if line.strip()]
+    if not lines:
+        return None
+
+    course, course_type = lines[0], ""
+    bracket = re.match(r"(.+?)\[([^\]]+)\]", lines[0])
+    if bracket:
+        course, course_type = bracket.group(1).strip(), bracket.group(2).strip()
+
+    # "周-节次码" 行（如 1-0102），节次取码段
+    periods: list[int] = []
+    period_line_index = -1
+    for index, line in enumerate(lines[1:], start=1):
+        match = re.fullmatch(r"\d+-(\d{2})(\d{2})", line)
+        if match:
+            periods = sorted({int(match.group(1)), int(match.group(2))})
+            period_line_index = index
+            break
+
+    remaining = [line for index, line in enumerate(lines[1:], start=1) if index != period_line_index]
+    teacher = remaining[0] if remaining else ""
+    location = "".join(remaining[1:])
+
+    return {
+        "course": course,
+        "course_type": course_type,
+        "teacher": teacher,
+        "periods": periods,
+        "location": location,
+    }
+
+
+def parse_grid_sheet(
+    rows: list[list[Any]],
+    semester_start: date,
+) -> list[dict]:
+    entries: list[dict] = []
+    block: list[list[Any]] = []
+
+    def flush(block_rows: list[list[Any]]) -> None:
+        if len(block_rows) < 5:
+            return
+
+        header_row = block_rows[1]
+        date_row = block_rows[2]
+        weekday_row = block_rows[3]
+
+        # 列 → 周次：『第N周』合并单元格的值落在组首列，向后生效
+        week_of_col: dict[int, int] = {}
+        current_week = 0
+        for col in range(1, len(header_row)):
+            match = re.search(r"第(\d+)周", str(header_row[col]))
+            if match:
+                current_week = int(match.group(1))
+            week_of_col[col] = current_week
+
+        # 列 → 日期（MM-DD）、星期
+        date_of_col: dict[int, str] = {}
+        for col in range(1, len(date_row)):
+            match = re.search(r"(\d{2})-(\d{2})", str(date_row[col]))
+            if match:
+                date_of_col[col] = f"{match.group(1)}-{match.group(2)}"
+
+        weekday_of_col: dict[int, int] = {}
+        for col in range(1, len(weekday_row)):
+            char = str(weekday_row[col]).strip()
+            if char in WEEKDAY_CHAR_TO_NUMBER:
+                weekday_of_col[col] = WEEKDAY_CHAR_TO_NUMBER[char]
+
+        for row in block_rows[4:]:
+            section = parse_grid_section_number(str(row[0]))
+            if section is None:
+                continue
+            fallback_periods = [2 * section - 1, 2 * section]
+
+            for col, raw in enumerate(row):
+                # openpyxl 的空单元格是 None，xlrd 是空串，统一归一化
+                cell_value = "" if raw is None else str(raw)
+                if col == 0 or not cell_value.strip():
+                    continue
+
+                info = parse_grid_cell(cell_value)
+                if not info:
+                    continue
+
+                week = week_of_col.get(col, 0)
+                weekday = weekday_of_col.get(col)
+                if weekday is None:
+                    continue
+                periods = info["periods"] or fallback_periods
+                if max(periods) > MAX_PERIODS:
+                    continue
+
+                # 日期优先用表内 MM-DD；缺了就按学期起点推算。
+                # 跨年周（如秋季学期的 1 月）需要选离推算日期更近的年份
+                date_text = date_of_col.get(col)
+                expected = date.fromisoformat(derive_date(week, semester_start))
+                if date_text:
+                    candidates = []
+                    for year in (semester_start.year, semester_start.year + 1):
+                        try:
+                            candidates.append(date(year, int(date_text[:2]), int(date_text[3:])))
+                        except ValueError:
+                            pass
+                    entry_date = (
+                        min(candidates, key=lambda d: abs((d - expected).days)).isoformat()
+                        if candidates
+                        else expected.isoformat()
+                    )
+                else:
+                    entry_date = expected.isoformat()
+
+                entries.append(
+                    {
+                        "week": week,
+                        "date": entry_date,
+                        "weekday": weekday,
+                        "weekday_name": WEEKDAY_NAMES[weekday - 1],
+                        "course": info["course"],
+                        "course_type": info["course_type"] or DEFAULT_COURSE_TYPE,
+                        "teacher": info["teacher"],
+                        "period_code": f"{periods[0]:02d}{periods[-1]:02d}",
+                        "periods": periods,
+                        "location": info["location"],
+                        "source_week": week,
+                        "big_sections": derive_big_sections(periods),
+                    }
+                )
+
+    for row in rows:
+        if "课表" in str(row[0] if row else ""):
+            flush(block)
+            block = [row]
+        elif block:
+            block.append(row)
+    flush(block)
+
+    return entries
+
+
+def parse_sheet_rows(rows: list[list[Any]], semester_start: date | None = None) -> list[dict]:
+    """单个工作表的统一入口：矩阵课表走网格解析，否则按列表解析。"""
+    semester_start = semester_start or date.fromisoformat(SEMESTER_START)
+    if looks_like_grid(rows):
+        entries = parse_grid_sheet(rows, semester_start)
+        if entries:
+            return entries
+    return rows_to_entries(rows, semester_start)
+
+
+
+
+# ---------------------------------------------------------------------------
 # 文件级入口
 # ---------------------------------------------------------------------------
 
@@ -247,7 +434,7 @@ def parse_xlsx(data: bytes, extension: str = ".xlsx") -> list[dict]:
         for sheet in book.sheets():
             rows = [sheet.row_values(row_index) for row_index in range(sheet.nrows)]
             if rows:
-                all_entries.extend(rows_to_entries(rows))
+                all_entries.extend(parse_sheet_rows(rows))
     else:
         from openpyxl import load_workbook
 
@@ -255,7 +442,7 @@ def parse_xlsx(data: bytes, extension: str = ".xlsx") -> list[dict]:
         for worksheet in workbook.worksheets:
             rows = [list(row) for row in worksheet.iter_rows(values_only=True)]
             if rows:
-                all_entries.extend(rows_to_entries(rows))
+                all_entries.extend(parse_sheet_rows(rows))
         workbook.close()
 
     if not all_entries:
@@ -273,7 +460,7 @@ def parse_docx(data: bytes) -> list[dict]:
     for table in document.tables:
         rows = [[cell.text for cell in row.cells] for row in table.rows]
         if rows:
-            all_entries.extend(rows_to_entries(rows))
+            all_entries.extend(parse_sheet_rows(rows))
 
     if not all_entries:
         raise ParseError("Word 文档中没有可识别的表格，请使用表格形式的课表。")

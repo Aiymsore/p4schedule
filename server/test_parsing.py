@@ -85,6 +85,43 @@ def test_unsupported_extension():
     with pytest.raises(ParseError, match="暂不支持"):
         parse_file("课表.png", b"fake")
 
+GRID_TABLE = [
+    ["张三2026年秋季学期课表"] + [""] * 14,
+    ["周次\n日期", "第1周"] + [""] * 6 + ["第2周"] + [""] * 6,
+    ["", "09-07", "09-08", "09-09", "09-10", "09-11", "09-12", "09-13",
+     "09-14", "09-15", "09-16", "09-17", "09-18", "09-19", "09-20"],
+    ["星期", "一", "二", "三", "四", "五", "六", "日",
+     "一", "二", "三", "四", "五", "六", "日"],
+    ["第一大节", "\r\n生态毒理学[理论课时]\r\n王咏\r\n1-0102\r\n环境学院216室\r\n"] + [""] * 13,
+    ["第二大节", "", "\r\n保护生物学[理论课时]\r\n王平\r\n1-0304\r\n环境学院215室\r\n"] + [""] * 12,
+    ["第三大节"] + [""] * 14,
+]
+
+
+def test_grid_xlsx_semester_matrix():
+    entries = parse_file("课表.xlsx", build_xlsx(GRID_TABLE))
+
+    assert len(entries) == 2
+
+    first = entries[0]
+    assert first["course"] == "生态毒理学"
+    assert first["teacher"] == "王咏"
+    assert first["course_type"] == "理论课时"
+    assert first["week"] == 1
+    assert first["weekday"] == 1
+    assert first["weekday_name"] == "周一"
+    assert first["date"] == "2026-09-07"
+    assert first["periods"] == [1, 2]
+    assert first["period_code"] == "0102"
+    assert first["location"] == "环境学院216室"
+    assert first["big_sections"] == [1]
+
+    second = entries[1]
+    assert second["course"] == "保护生物学"
+    assert second["weekday"] == 2
+    assert second["periods"] == [3, 4]
+    assert second["date"] == "2026-09-08"
+
 
 def test_no_header_raises():
     with pytest.raises(ParseError):

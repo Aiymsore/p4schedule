@@ -1,2923 +1,3326 @@
 [
   {
-    "week":1,
-    "date":"2026-09-07",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
+    "week": 1,
+    "date": "2026-09-07",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院216室",
-    "source_week":1,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 1,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":1,
-    "date":"2026-09-07",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":1,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":1,
-    "date":"2026-09-08",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
+    "week": 1,
+    "date": "2026-09-08",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院215室",
-    "source_week":1,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 1,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":1,
-    "date":"2026-09-08",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":1,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":1,
-    "date":"2026-09-09",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
+    "week": 1,
+    "date": "2026-09-09",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"净月综合教学楼3教",
-    "source_week":1,
-    "big_sections":[
+    "location": "净月综合教学楼3教",
+    "source_week": 1,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":1,
-    "date":"2026-09-09",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
+    "week": 2,
+    "date": "2026-09-14",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 2,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2026-09-15",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 2,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-21",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 3,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 3,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-23",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 3,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 1,
+    "date": "2026-09-07",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"环境学院216室",
-    "source_week":1,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 1,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":1,
-    "date":"2026-09-10",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
+    "week": 1,
+    "date": "2026-09-08",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":1,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 1,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":1,
-    "date":"2026-09-10",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
+    "week": 1,
+    "date": "2026-09-09",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 1,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 1,
+    "date": "2026-09-10",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 1,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2026-09-14",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 2,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2026-09-15",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 2,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2026-09-16",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 2,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2026-09-17",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 2,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-21",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 3,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 3,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-23",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 3,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-24",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 3,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 1,
+    "date": "2026-09-10",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"环境学院203A室",
-    "source_week":1,
-    "big_sections":[
+    "location": "环境学院203室",
+    "source_week": 1,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":1,
-    "date":"2026-09-11",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 2,
+    "date": "2026-09-17",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203室",
+    "source_week": 2,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "净月综合教学楼6教",
+    "source_week": 3,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-24",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203室",
+    "source_week": 3,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 1,
+    "date": "2026-09-08",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 1,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 2,
+    "date": "2026-09-15",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 2,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 3,
+    "date": "2026-09-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 3,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 1,
+    "date": "2026-09-11",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":1,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 1,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":2,
-    "date":"2026-09-14",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":2,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-14",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":2,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-15",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":2,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-15",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":2,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-16",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":2,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-17",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":2,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-17",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":2,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":2,
-    "date":"2026-09-18",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 2,
+    "date": "2026-09-18",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":2,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 2,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":3,
-    "date":"2026-09-21",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":3,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-21",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":3,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-22",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":3,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-22",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"净月综合教学楼6教",
-    "source_week":3,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-22",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":3,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-23",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"净月综合教学楼3教",
-    "source_week":3,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-23",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":3,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-24",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":3,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-24",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":3,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":3,
-    "date":"2026-09-25",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 3,
+    "date": "2026-09-25",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":3,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 3,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":4,
-    "date":"2026-09-28",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
+    "week": 4,
+    "date": "2026-09-28",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院216室",
-    "source_week":4,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 4,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":4,
-    "date":"2026-09-28",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
+    "week": 4,
+    "date": "2026-09-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 4,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-05",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 5,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-06",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 5,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-07",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 5,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-12",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 6,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-13",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 6,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2026-09-28",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"环境学院216室",
-    "source_week":4,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 4,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":4,
-    "date":"2026-09-29",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
+    "week": 4,
+    "date": "2026-09-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
     ],
-    "location":"环境学院215室",
-    "source_week":4,
-    "big_sections":[
-      1
+    "location": "环境学院215室",
+    "source_week": 4,
+    "big_sections": [
+      2
     ]
   },
   {
-    "week":4,
-    "date":"2026-09-29",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
+    "week": 4,
+    "date": "2026-09-30",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 4,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2026-10-01",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 4,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-05",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 5,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-06",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 5,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-07",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 5,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-08",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 5,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-12",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 6,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-13",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 6,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-14",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 6,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-15",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 6,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2026-09-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"净月综合教学楼6教",
-    "source_week":4,
-    "big_sections":[
+    "location": "净月综合教学楼6教",
+    "source_week": 4,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":4,
-    "date":"2026-09-29",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
+    "week": 4,
+    "date": "2026-10-01",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203室",
+    "source_week": 4,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-06",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "净月综合教学楼6教",
+    "source_week": 5,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-08",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203室",
+    "source_week": 5,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 5,
+    "date": "2026-10-09",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "5-05060708环境学院120实验室",
+    "source_week": 5,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-13",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "净月综合教学楼6教",
+    "source_week": 6,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-15",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203室",
+    "source_week": 6,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-16",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "6-05060708环境学院120实验室",
+    "source_week": 6,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2026-09-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
       7,
       8
     ],
-    "location":"环境学院216室",
-    "source_week":4,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 4,
+    "big_sections": [
       4
     ]
   },
   {
-    "week":4,
-    "date":"2026-09-30",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
+    "week": 5,
+    "date": "2026-10-06",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 5,
+    "big_sections": [
       4
-    ],
-    "location":"环境学院216室",
-    "source_week":4,
-    "big_sections":[
-      2
     ]
   },
   {
-    "week":4,
-    "date":"2026-10-01",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
+    "week": 5,
+    "date": "2026-10-09",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "5-05060708环境学院120实验室",
+    "source_week": 5,
+    "big_sections": [
       4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":4,
-    "big_sections":[
-      2
     ]
   },
   {
-    "week":4,
-    "date":"2026-10-01",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
+    "week": 6,
+    "date": "2026-10-13",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
     ],
-    "location":"环境学院203A室",
-    "source_week":4,
-    "big_sections":[
-      3
+    "location": "环境学院216室",
+    "source_week": 6,
+    "big_sections": [
+      4
     ]
   },
   {
-    "week":4,
-    "date":"2026-10-02",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 6,
+    "date": "2026-10-16",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "6-05060708环境学院120实验室",
+    "source_week": 6,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2026-10-02",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":4,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 4,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":4,
-    "date":"2026-10-04",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 5,
+    "date": "2026-10-09",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 5,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 6,
+    "date": "2026-10-16",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 6,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 4,
+    "date": "2026-10-04",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":4,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 4,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":5,
-    "date":"2026-10-05",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":5,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-05",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":5,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-06",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":5,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-06",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"净月综合教学楼6教",
-    "source_week":5,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-06",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":5,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-07",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"净月综合教学楼3教",
-    "source_week":5,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-07",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":5,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-08",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":5,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-08",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":5,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-09",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"生态毒理学实验",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"05060708",
-    "periods":[
-      5,
-      6,
-      7,
-      8
-    ],
-    "location":"环境学院120实验室",
-    "source_week":5,
-    "big_sections":[
-      3,
-      4
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-09",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":5,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":5,
-    "date":"2026-10-11",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 5,
+    "date": "2026-10-11",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":5,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 5,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":6,
-    "date":"2026-10-12",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":6,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-12",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":6,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-13",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":6,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-13",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"净月综合教学楼6教",
-    "source_week":6,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-13",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":6,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-14",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":6,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-15",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":6,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-15",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":6,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-16",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"生态毒理学实验",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"05060708",
-    "periods":[
-      5,
-      6,
-      7,
-      8
-    ],
-    "location":"环境学院120实验室",
-    "source_week":6,
-    "big_sections":[
-      3,
-      4
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-16",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":6,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":6,
-    "date":"2026-10-18",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 6,
+    "date": "2026-10-18",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":6,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 6,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-19",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
+    "week": 7,
+    "date": "2026-10-19",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院216室",
-    "source_week":7,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 7,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-19",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
+    "week": 7,
+    "date": "2026-10-20",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 7,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-21",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 7,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-26",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 8,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-27",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 8,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-02",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 9,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-03",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 9,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-04",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 9,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-19",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"环境学院216室",
-    "source_week":7,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 7,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-20",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
+    "week": 7,
+    "date": "2026-10-20",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
     ],
-    "location":"环境学院215室",
-    "source_week":7,
-    "big_sections":[
-      1
+    "location": "环境学院215室",
+    "source_week": 7,
+    "big_sections": [
+      2
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-20",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
+    "week": 7,
+    "date": "2026-10-21",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 7,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-22",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 7,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-26",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 8,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-27",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 8,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-28",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 8,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-29",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 8,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-02",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "水文与水资源",
+    "course_type": "理论课时",
+    "teacher": "杨武",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院216室",
+    "source_week": 9,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-03",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 9,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-05",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 9,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-20",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"净月综合教学楼6教",
-    "source_week":7,
-    "big_sections":[
+    "location": "净月综合教学楼6教",
+    "source_week": 7,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-20",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":7,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":7,
-    "date":"2026-10-21",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"净月综合教学楼3教",
-    "source_week":7,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":7,
-    "date":"2026-10-21",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":7,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":7,
-    "date":"2026-10-22",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":7,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":7,
-    "date":"2026-10-22",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
+    "week": 7,
+    "date": "2026-10-22",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"环境学院203A室",
-    "source_week":7,
-    "big_sections":[
+    "location": "环境学院203室",
+    "source_week": 7,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-23",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"生态毒理学实验",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"05060708",
-    "periods":[
+    "week": 7,
+    "date": "2026-10-23",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0506",
+    "periods": [
       5,
-      6,
+      6
+    ],
+    "location": "7-05060708环境学院120实验室",
+    "source_week": 7,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-27",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "净月综合教学楼6教",
+    "source_week": 8,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-29",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "保护生物学",
+    "course_type": "理论课时",
+    "teacher": "王平",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203室",
+    "source_week": 8,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-30",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "8-05060708环境学院120实验室",
+    "source_week": 8,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-03",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "净月综合教学楼6教",
+    "source_week": 9,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-05",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 9,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-06",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "9-05060708环境学院120实验室",
+    "source_week": 9,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-20",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
       7,
       8
     ],
-    "location":"环境学院120实验室",
-    "source_week":7,
-    "big_sections":[
-      3,
+    "location": "环境学院216室",
+    "source_week": 7,
+    "big_sections": [
       4
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-23",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 7,
+    "date": "2026-10-23",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "7-05060708环境学院120实验室",
+    "source_week": 7,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-27",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 8,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 8,
+    "date": "2026-10-30",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "8-05060708环境学院120实验室",
+    "source_week": 8,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-03",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 9,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-06",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "生态毒理学实验",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "9-05060708环境学院120实验室",
+    "source_week": 9,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-23",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":7,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 7,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":7,
-    "date":"2026-10-25",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 8,
+    "date": "2026-10-30",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 8,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 9,
+    "date": "2026-11-06",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 9,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 7,
+    "date": "2026-10-25",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":7,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 7,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":8,
-    "date":"2026-10-26",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":8,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-26",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":8,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-27",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":8,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-27",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"净月综合教学楼6教",
-    "source_week":8,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-27",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":8,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-28",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":8,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-29",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":8,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-29",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":8,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-30",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"生态毒理学实验",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"05060708",
-    "periods":[
-      5,
-      6,
-      7,
-      8
-    ],
-    "location":"环境学院120实验室",
-    "source_week":8,
-    "big_sections":[
-      3,
-      4
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-10-30",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":8,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":8,
-    "date":"2026-11-01",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 8,
+    "date": "2026-11-01",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":8,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 8,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":9,
-    "date":"2026-11-02",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":9,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-02",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"水文与水资源",
-    "course_type":"理论课时",
-    "teacher":"杨武",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"环境学院216室",
-    "source_week":9,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-03",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"保护生物学",
-    "course_type":"理论课时",
-    "teacher":"王平",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":9,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-03",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"净月综合教学楼6教",
-    "source_week":9,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-03",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":9,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-04",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"净月综合教学楼3教",
-    "source_week":9,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-05",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":9,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-05",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":9,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-06",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"生态毒理学实验",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"05060708",
-    "periods":[
-      5,
-      6,
-      7,
-      8
-    ],
-    "location":"环境学院120实验室",
-    "source_week":9,
-    "big_sections":[
-      3,
-      4
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-06",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":9,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":9,
-    "date":"2026-11-08",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 9,
+    "date": "2026-11-08",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":9,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 9,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-09",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
+    "week": 10,
+    "date": "2026-11-09",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院216室",
-    "source_week":10,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 10,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-10",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
+    "week": 10,
+    "date": "2026-11-10",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院215室",
-    "source_week":10,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 10,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-10",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
+    "week": 11,
+    "date": "2026-11-16",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
     ],
-    "location":"净月综合教学楼6教",
-    "source_week":10,
-    "big_sections":[
-      3
+    "location": "环境学院216室",
+    "source_week": 11,
+    "big_sections": [
+      1
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-10",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
+    "week": 11,
+    "date": "2026-11-17",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
     ],
-    "location":"环境学院216室",
-    "source_week":10,
-    "big_sections":[
-      4
+    "location": "环境学院215室",
+    "source_week": 11,
+    "big_sections": [
+      1
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-12",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
+    "week": 11,
+    "date": "2026-11-18",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 11,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-23",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 12,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-24",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 12,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 10,
+    "date": "2026-11-10",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "王德利",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":10,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 10,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-12",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
+    "week": 10,
+    "date": "2026-11-12",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 10,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 11,
+    "date": "2026-11-17",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 11,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 11,
+    "date": "2026-11-19",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 11,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-24",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 12,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-26",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 12,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 10,
+    "date": "2026-11-10",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"环境学院203A室",
-    "source_week":10,
-    "big_sections":[
+    "location": "净月综合教学楼6教",
+    "source_week": 10,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-13",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 10,
+    "date": "2026-11-12",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 10,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 11,
+    "date": "2026-11-17",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "文献检索与论文写作",
+    "course_type": "理论课时",
+    "teacher": "李超",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "净月综合教学楼6教",
+    "source_week": 11,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 11,
+    "date": "2026-11-19",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 11,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-26",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 12,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 10,
+    "date": "2026-11-10",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 10,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 11,
+    "date": "2026-11-17",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 11,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-24",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 12,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 10,
+    "date": "2026-11-13",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":10,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 10,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":10,
-    "date":"2026-11-15",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 11,
+    "date": "2026-11-20",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 11,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 12,
+    "date": "2026-11-27",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 12,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 10,
+    "date": "2026-11-15",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":10,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 10,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":11,
-    "date":"2026-11-16",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":11,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-17",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":11,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-17",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"文献检索与论文写作",
-    "course_type":"理论课时",
-    "teacher":"李超",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"净月综合教学楼6教",
-    "source_week":11,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-17",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":11,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-18",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"净月综合教学楼3教",
-    "source_week":11,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-19",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":11,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-19",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":11,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-20",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":11,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":11,
-    "date":"2026-11-22",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 11,
+    "date": "2026-11-22",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":11,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 11,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":12,
-    "date":"2026-11-23",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":12,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":12,
-    "date":"2026-11-24",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":12,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":12,
-    "date":"2026-11-24",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":12,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":12,
-    "date":"2026-11-26",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":12,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":12,
-    "date":"2026-11-26",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":12,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":12,
-    "date":"2026-11-27",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":12,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":12,
-    "date":"2026-11-29",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 12,
+    "date": "2026-11-29",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":12,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 12,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":13,
-    "date":"2026-11-30",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
+    "week": 13,
+    "date": "2026-11-30",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院216室",
-    "source_week":13,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 13,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":13,
-    "date":"2026-12-01",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
+    "week": 13,
+    "date": "2026-12-01",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院215室",
-    "source_week":13,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 13,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":13,
-    "date":"2026-12-01",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":13,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":13,
-    "date":"2026-12-02",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
+    "week": 13,
+    "date": "2026-12-02",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"净月综合教学楼3教",
-    "source_week":13,
-    "big_sections":[
+    "location": "净月综合教学楼3教",
+    "source_week": 13,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":13,
-    "date":"2026-12-03",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
+    "week": 14,
+    "date": "2026-12-07",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 14,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 14,
+    "date": "2026-12-08",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 14,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-14",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院216室",
+    "source_week": 15,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-15",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 15,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-16",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 15,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 13,
+    "date": "2026-12-01",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":13,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 13,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":13,
-    "date":"2026-12-03",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
+    "week": 13,
+    "date": "2026-12-03",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 13,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 14,
+    "date": "2026-12-08",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 14,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 14,
+    "date": "2026-12-10",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 14,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-15",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 15,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-17",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 15,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 13,
+    "date": "2026-12-03",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"环境学院203A室",
-    "source_week":13,
-    "big_sections":[
+    "location": "环境学院203A室",
+    "source_week": 13,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":13,
-    "date":"2026-12-04",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 14,
+    "date": "2026-12-10",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 14,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-17",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 15,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 13,
+    "date": "2026-12-01",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 13,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 14,
+    "date": "2026-12-08",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 14,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-15",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 15,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 13,
+    "date": "2026-12-04",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":13,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 13,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":13,
-    "date":"2026-12-06",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 14,
+    "date": "2026-12-11",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 14,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 15,
+    "date": "2026-12-18",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
+      9,
+      10
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 15,
+    "big_sections": [
+      5
+    ]
+  },
+  {
+    "week": 13,
+    "date": "2026-12-06",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":13,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 13,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":14,
-    "date":"2026-12-07",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":14,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":14,
-    "date":"2026-12-08",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":14,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":14,
-    "date":"2026-12-08",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":14,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":14,
-    "date":"2026-12-10",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":14,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":14,
-    "date":"2026-12-10",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":14,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":14,
-    "date":"2026-12-11",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":14,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":14,
-    "date":"2026-12-13",
-    "weekday":7,
-    "weekday_name":"周日",
-    "course":"健康导航与科学用药",
-    "course_type":"理论课时",
-    "teacher":"刘延涛",
-    "period_code":"1112",
-    "periods":[
+    "week": 14,
+    "date": "2026-12-13",
+    "weekday": 7,
+    "weekday_name": "周日",
+    "course": "健康导航与科学用药",
+    "course_type": "理论课时",
+    "teacher": "刘延涛",
+    "period_code": "1112",
+    "periods": [
       11,
       12
     ],
-    "location":"净月在线虚拟教室",
-    "source_week":14,
-    "big_sections":[
+    "location": "净月在线虚拟教室",
+    "source_week": 14,
+    "big_sections": [
       6
     ]
   },
   {
-    "week":15,
-    "date":"2026-12-14",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
+    "week": 16,
+    "date": "2026-12-21",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院216室",
-    "source_week":15,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 16,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":15,
-    "date":"2026-12-15",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
+    "week": 16,
+    "date": "2026-12-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"环境学院215室",
-    "source_week":15,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 16,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":15,
-    "date":"2026-12-15",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":15,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":15,
-    "date":"2026-12-16",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
+    "week": 17,
+    "date": "2026-12-28",
+    "weekday": 1,
+    "weekday_name": "周一",
+    "course": "生态毒理学",
+    "course_type": "理论课时",
+    "teacher": "王咏",
+    "period_code": "0102",
+    "periods": [
       1,
       2
     ],
-    "location":"净月综合教学楼3教",
-    "source_week":15,
-    "big_sections":[
+    "location": "环境学院216室",
+    "source_week": 17,
+    "big_sections": [
       1
     ]
   },
   {
-    "week":15,
-    "date":"2026-12-17",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
+    "week": 17,
+    "date": "2026-12-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "环境学院215室",
+    "source_week": 17,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 17,
+    "date": "2026-12-30",
+    "weekday": 3,
+    "weekday_name": "周三",
+    "course": "习近平新时代中国特色社会主义思想概论",
+    "course_type": "理论课时",
+    "teacher": "孙成",
+    "period_code": "0102",
+    "periods": [
+      1,
+      2
+    ],
+    "location": "净月综合教学楼3教",
+    "source_week": 17,
+    "big_sections": [
+      1
+    ]
+  },
+  {
+    "week": 16,
+    "date": "2026-12-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
       3,
       4
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":15,
-    "big_sections":[
+    "location": "环境学院215室",
+    "source_week": 16,
+    "big_sections": [
       2
     ]
   },
   {
-    "week":15,
-    "date":"2026-12-17",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
+    "week": 16,
+    "date": "2026-12-24",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 16,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 17,
+    "date": "2026-12-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "生态系统生态学",
+    "course_type": "理论课时",
+    "teacher": "吴东辉",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "环境学院215室",
+    "source_week": 17,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 17,
+    "date": "2026-12-31",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "景观生态学",
+    "course_type": "理论课时",
+    "teacher": "李振新",
+    "period_code": "0304",
+    "periods": [
+      3,
+      4
+    ],
+    "location": "净月综合教学楼2教",
+    "source_week": 17,
+    "big_sections": [
+      2
+    ]
+  },
+  {
+    "week": 16,
+    "date": "2026-12-24",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
       5,
       6
     ],
-    "location":"环境学院203A室",
-    "source_week":15,
-    "big_sections":[
+    "location": "环境学院203A室",
+    "source_week": 16,
+    "big_sections": [
       3
     ]
   },
   {
-    "week":15,
-    "date":"2026-12-18",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 17,
+    "date": "2026-12-31",
+    "weekday": 4,
+    "weekday_name": "周四",
+    "course": "进化生态学",
+    "course_type": "理论课时",
+    "teacher": "唐占辉",
+    "period_code": "0506",
+    "periods": [
+      5,
+      6
+    ],
+    "location": "环境学院203A室",
+    "source_week": 17,
+    "big_sections": [
+      3
+    ]
+  },
+  {
+    "week": 16,
+    "date": "2026-12-22",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 16,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 17,
+    "date": "2026-12-29",
+    "weekday": 2,
+    "weekday_name": "周二",
+    "course": "环境生态学",
+    "course_type": "理论课时",
+    "teacher": "姜海波",
+    "period_code": "0708",
+    "periods": [
+      7,
+      8
+    ],
+    "location": "环境学院216室",
+    "source_week": 17,
+    "big_sections": [
+      4
+    ]
+  },
+  {
+    "week": 16,
+    "date": "2026-12-25",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":15,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 16,
+    "big_sections": [
       5
     ]
   },
   {
-    "week":16,
-    "date":"2026-12-21",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":16,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":16,
-    "date":"2026-12-22",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":16,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":16,
-    "date":"2026-12-22",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":16,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":16,
-    "date":"2026-12-24",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":16,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":16,
-    "date":"2026-12-24",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":16,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":16,
-    "date":"2026-12-25",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
+    "week": 17,
+    "date": "2027-01-01",
+    "weekday": 5,
+    "weekday_name": "周五",
+    "course": "智慧企业",
+    "course_type": "理论课时",
+    "teacher": "汪东波",
+    "period_code": "0910",
+    "periods": [
       9,
       10
     ],
-    "location":"净月综合教学楼2教",
-    "source_week":16,
-    "big_sections":[
-      5
-    ]
-  },
-  {
-    "week":17,
-    "date":"2026-12-28",
-    "weekday":1,
-    "weekday_name":"周一",
-    "course":"生态毒理学",
-    "course_type":"理论课时",
-    "teacher":"王咏",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院216室",
-    "source_week":17,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":17,
-    "date":"2026-12-29",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"环境学院215室",
-    "source_week":17,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":17,
-    "date":"2026-12-29",
-    "weekday":2,
-    "weekday_name":"周二",
-    "course":"环境生态学",
-    "course_type":"理论课时",
-    "teacher":"姜海波",
-    "period_code":"0708",
-    "periods":[
-      7,
-      8
-    ],
-    "location":"环境学院216室",
-    "source_week":17,
-    "big_sections":[
-      4
-    ]
-  },
-  {
-    "week":17,
-    "date":"2026-12-30",
-    "weekday":3,
-    "weekday_name":"周三",
-    "course":"习近平新时代中国特色社会主义思想概论",
-    "course_type":"理论课时",
-    "teacher":"孙成",
-    "period_code":"0102",
-    "periods":[
-      1,
-      2
-    ],
-    "location":"净月综合教学楼3教",
-    "source_week":17,
-    "big_sections":[
-      1
-    ]
-  },
-  {
-    "week":17,
-    "date":"2026-12-31",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"景观生态学",
-    "course_type":"理论课时",
-    "teacher":"李振新",
-    "period_code":"0304",
-    "periods":[
-      3,
-      4
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":17,
-    "big_sections":[
-      2
-    ]
-  },
-  {
-    "week":17,
-    "date":"2026-12-31",
-    "weekday":4,
-    "weekday_name":"周四",
-    "course":"进化生态学",
-    "course_type":"理论课时",
-    "teacher":"唐占辉",
-    "period_code":"0506",
-    "periods":[
-      5,
-      6
-    ],
-    "location":"环境学院203A室",
-    "source_week":17,
-    "big_sections":[
-      3
-    ]
-  },
-  {
-    "week":17,
-    "date":"2027-01-01",
-    "weekday":5,
-    "weekday_name":"周五",
-    "course":"智慧企业",
-    "course_type":"理论课时",
-    "teacher":"汪东波",
-    "period_code":"0910",
-    "periods":[
-      9,
-      10
-    ],
-    "location":"净月综合教学楼2教",
-    "source_week":17,
-    "big_sections":[
+    "location": "净月综合教学楼2教",
+    "source_week": 17,
+    "big_sections": [
       5
     ]
   }
