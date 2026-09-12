@@ -686,13 +686,14 @@ h1 {
 }
 
 .today-header{
+  flex-direction:column;
+  gap:2px;
   background:#ede9fe;
   color:#7c3aed;
 }
 
 .today-header small{
   display:block;
-  margin-top:4px;
   font-size:10px;
   letter-spacing:.08em;
 }
