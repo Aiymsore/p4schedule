@@ -1,2 +1,6 @@
 # ZCode CLI 本地数据
 .zcode/
+
+# Python 缓存
+__pycache__/
+.pytest_cache/

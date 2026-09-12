@@ -204,6 +204,14 @@ const questionnaireQuestions = document.getElementById("questionnaireQuestions")
 const questionnaireMessage = document.getElementById("questionnaireMessage");
 const retestSkipIndexButton = document.getElementById("retestSkipIndex");
 
+const importButton = document.getElementById("importButton");
+const courseFileInput = document.getElementById("courseFileInput");
+const importStatus = document.getElementById("importStatus");
+
+// 课表导入接口地址：空 = 同源（FastAPI 托管整站时）；
+// 前端留在 GitHub Pages 时填 VPS 地址，如 "https://your-domain.com"
+const API_BASE = "";
+
 // =========================================================
 // 页面状态
 // =========================================================
@@ -879,19 +887,68 @@ function updateTodayCard() {
 // 页面入口
 // =========================================================
 
+function applyCourses(courses) {
+  allCourses = courses;
+
+  maxWeek = Math.max(
+    ...allCourses.map(course => course.week)
+  );
+
+  currentWeek = calculateCurrentWeek();
+  renderCurrentWeek();
+  updateTodayCard();
+}
+
+async function handleImportFile(file) {
+  if (!file) {
+    return;
+  }
+
+  importButton.disabled = true;
+  importStatus.textContent = "解析中…";
+  importStatus.classList.remove("import-error");
+
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch(`${API_BASE}/api/parse`, {
+      method: "POST",
+      body: formData
+    });
+
+    const payload = await response.json();
+
+    if (!response.ok) {
+      throw new Error(payload.detail || `导入失败：${response.status}`);
+    }
+
+    applyCourses(payload.courses);
+    importStatus.textContent = `已导入 ${payload.count} 条课程`;
+  } catch (error) {
+    console.error("课表导入失败：", error);
+    importStatus.textContent = error.message;
+    importStatus.classList.add("import-error");
+  } finally {
+    importButton.disabled = false;
+    courseFileInput.value = "";
+  }
+}
+
 async function main() {
   renderBaseGrid();
 
+  importButton.addEventListener("click", () => {
+    courseFileInput.click();
+  });
+
+  courseFileInput.addEventListener("change", () => {
+    handleImportFile(courseFileInput.files[0]);
+  });
+
   try {
     allCourses = await loadCourses();
-
-    maxWeek = Math.max(
-      ...allCourses.map(course => course.week)
-    );
-
-    currentWeek = calculateCurrentWeek();
-    renderCurrentWeek();
-    updateTodayCard();
+    applyCourses(allCourses);
   } catch (error) {
     console.error("课程加载失败：", error);
 

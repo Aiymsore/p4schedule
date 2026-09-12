@@ -23,6 +23,17 @@
       </div>
 
       <p class="semester">2026 秋季学期</p>
+
+      <div class="import-area">
+        <button id="importButton" type="button">导入课表</button>
+        <input
+          id="courseFileInput"
+          type="file"
+          accept=".xlsx,.xls,.docx"
+          hidden
+        />
+        <span id="importStatus" aria-live="polite"></span>
+      </div>
     </header>
 
     <section id="todayCard" class="today-card">

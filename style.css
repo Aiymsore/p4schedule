@@ -800,3 +800,45 @@ h1 {
     height:7px;
   }
 }
+
+/* ---------- 课表导入 ---------- */
+
+.import-area {
+  position: absolute;
+  right: 16px;
+  bottom: -34px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.import-area button {
+  min-height: 32px;
+  padding: 6px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.import-area button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.import-error {
+  color: #b91c1c;
+}
+
+@media (max-width:768px){
+
+  .import-area{
+    position:static;
+    margin-top:8px;
+  }
+}
