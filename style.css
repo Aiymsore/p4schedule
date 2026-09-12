@@ -120,8 +120,8 @@ h1 {
   position: relative;
   display: grid;
   grid-template-columns:
-    88px
-    repeat(7, minmax(125px, 1fr));
+    76px
+    repeat(7, minmax(120px, 1fr));
   grid-template-rows:
     58px
     repeat(12, 76px);
@@ -154,6 +154,10 @@ h1 {
 }
 
 .section-label {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #f8fafc;
   color: #7b8494;
   font-size: 13px;
 }
@@ -268,13 +272,14 @@ h1 {
 .course-detail {
   position: relative;
   z-index: 1;
-  width: min(620px, 100%);
+  width: min(560px, calc(100% - 40px));
   max-height: 88vh;
   overflow-y: auto;
   padding: 30px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
   border: 1px solid #e5e7eb;
-  border-radius: 22px;
+  border-radius: 28px;
   box-shadow: 0 30px 80px rgba(15, 23, 42, 0.22);
 }
 
@@ -365,10 +370,11 @@ h1 {
 }
 
 .skip-result {
+  margin-top: 20px;
   padding: 20px;
   border: 1px solid #e0e7ff;
-  border-radius: 16px;
-  background: #f8faff;
+  border-radius: 22px;
+  background: #f8fafc;
 }
 
 .skip-main-result {
@@ -385,9 +391,9 @@ h1 {
 }
 
 .skip-score {
-  color: #312e81;
-  font-size: 42px;
-  font-weight: 850;
+  color: #7c3aed;
+  font-size: 48px;
+  font-weight: 800;
   line-height: 1;
 }
 
@@ -604,15 +610,11 @@ h1 {
 
 @media (max-width: 600px) {
   .course-modal {
-    align-items: flex-end;
     padding: 10px;
   }
 
   .course-detail {
-    width: 100%;
-    max-height: 92vh;
     padding: 24px 20px;
-    border-radius: 22px;
   }
 
   .course-detail h2 {
@@ -632,65 +634,18 @@ h1 {
   }
 }
 
+/* ≤700px：弹窗改为贴底底部面板（该块的 radius/max-height 覆盖 600px 块的同名值） */
 
-/* ===== v3 layout fixes ===== */
+@media (max-width: 700px) {
+  .course-modal {
+    align-items: flex-end;
+  }
 
-.schedule-grid {
-  grid-template-columns: 76px repeat(7, minmax(120px, 1fr));
-}
-
-.section-label {
-  grid-column: 1 !important;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#f8fafc;
-  position:sticky;
-  left:0;
-  z-index:5;
-}
-
-.today-header {
-  background:linear-gradient(135deg,#ede9fe,#fae8ff);
-  color:#7c3aed;
-}
-
-.today-header small {
-  display:block;
-  font-size:10px;
-  letter-spacing:1px;
-  margin-top:4px;
-}
-
-.course-detail {
-  width:min(560px,calc(100% - 40px));
-  border-radius:28px;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(20px);
-}
-
-.skip-result {
-  margin-top:20px;
-  padding:20px;
-  border-radius:22px;
-  background:#f8fafc;
-}
-
-#skipScore {
-  font-size:48px;
-  font-weight:800;
-  color:#7c3aed;
-}
-
-@media(max-width:700px){
- .course-modal{
-   align-items:flex-end;
- }
- .course-detail{
-   width:100%;
-   max-height:80vh;
-   border-radius:28px 28px 0 0;
- }
+  .course-detail {
+    width: 100%;
+    max-height: 80vh;
+    border-radius: 28px 28px 0 0;
+  }
 }
 
 
@@ -731,17 +686,19 @@ h1 {
 }
 
 .today-header{
-  background:#ede9fe !important;
+  background:#ede9fe;
   color:#7c3aed;
 }
+
 .today-header small{
   display:block;
+  margin-top:4px;
   font-size:10px;
   letter-spacing:.08em;
 }
 
 
-/* ===== P4 Mobile Layout v5 ===== */
+/* ===== 手机端统一布局（≤768px，合并原 v5/v6/v9/v10 块） ===== */
 
 @media (max-width:768px){
 
@@ -758,151 +715,24 @@ h1 {
     font-size:26px;
   }
 
-  /* Today card */
-  .today-card{
-  margin:0 0 22px;
-  padding:18px 24px;
-
-  border-radius:26px;
-
-  /* 淡蓝白背景 */
-  background:#f8fafc;
-
-  /* 黑色细边框 */
-  border:1px solid #111827;
-
-  /* 非彩色阴影 */
-  box-shadow:
-    0 10px 30px rgba(15,23,42,.08);
-}
-
-  /* Keep full week schedule on mobile */
-  .schedule-panel{
-    margin:16px;
-    overflow-x:auto;
-    border-radius:24px;
-  }
-
-  .schedule-grid{
-    min-width:850px;
-    grid-template-columns:
-      55px repeat(7,110px);
-  }
-
-  .course-card{
-    border-radius:16px;
-    padding:10px;
-    min-height:80px;
-  }
-
-  .course-name{
-    font-size:13px;
-  }
-
-  .course-meta{
-    font-size:11px;
-  }
-
-  .week-switcher{
-    transform:scale(.9);
-  }
-}
-
-
-/* ===== P4 SCHEDULE 4P v6 Compact Mobile ===== */
-
-@media (max-width:768px){
-
-  /* 手机端显示完整七天 */
-  .schedule-panel{
-    overflow-x:auto;
-    margin:12px;
-  }
-
-  .schedule-grid{
-    min-width:520px;
-    grid-template-columns:32px repeat(7,70px);
-  }
-
-  /* 节次只显示数字 */
-  .section-label{
-    font-size:0;
-    width:32px;
-  }
-
-  .section-label::after{
-    content:attr(data-section);
-    font-size:12px;
-  }
-
-  /* 压缩课程卡 */
-  .course-card{
-    padding:6px;
-    border-radius:12px;
-    min-height:65px;
-  }
-
-  .course-name{
-    font-size:11px;
-    line-height:1.25;
-  }
-
-  .course-meta{
-    font-size:9px;
-    line-height:1.25;
-  }
-
-  /* 隐藏冗余信息，保持快速浏览 */
-  .course-card .location{
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-
-}
-
-
-/* ===== v9 Mobile Horizontal Week Scroll ===== */
-/* Keep all 7 days. Initial view shows about 5 days, swipe right for weekend. */
-
-@media (max-width:768px){
-
-  body{
-    overflow-x:hidden;
-  }
-
   .today-card{
     min-height:120px;
     padding:16px 20px;
+    border:1px solid #111827;
     border-radius:24px;
-  }
-
-  .today-card h2{
-    font-size:24px;
-    margin:4px 0;
-  }
-
-  .today-card .today-label,
-  .today-card .eyebrow{
-    font-size:11px;
-    letter-spacing:.12em;
+    background:#f8fafc;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
   }
 
   .schedule-panel{
-    overflow-x:auto;
+    margin:12px;
     -webkit-overflow-scrolling:touch;
+    border-radius:24px;
   }
 
-  /* Keep seven days but compact enough to show five */
   .schedule-grid{
     min-width:520px;
     grid-template-columns:34px repeat(7,70px);
-  }
-
-  /* Do not hide Saturday/Sunday */
-  .saturday,
-  .sunday{
-    display:block;
   }
 
   .section-label{
@@ -930,11 +760,6 @@ h1 {
     font-size:9px;
     line-height:1.2;
   }
-}
-
-/* ===== v10 Mobile: align week-switcher right edge with schedule panel ===== */
-
-@media (max-width:768px){
 
   .week-switcher{
     left:auto;
