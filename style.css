@@ -684,6 +684,15 @@ h1 {
   margin:5px 0 0;
   color:#64748b;
 }
+.today-course-item{
+  margin-top:14px;
+}
+.today-course-item strong{
+  margin-top:0;
+}
+.today-empty{
+  margin:5px 0 0;
+}
 
 .today-header{
   flex-direction:column;

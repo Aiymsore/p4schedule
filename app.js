@@ -860,27 +860,41 @@ function updateTodayCard() {
   const todayWeekday = today === 0 ? 7 : today;
 
   const dayEl = document.getElementById("todayDay");
-  const courseEl = document.getElementById("todayCourse");
-  const infoEl = document.getElementById("todayInfo");
+  const listEl = document.getElementById("todayCourseList");
 
-  if (!dayEl || !courseEl || !infoEl || !allCourses.length) return;
+  if (!dayEl || !listEl || !allCourses.length) return;
 
   dayEl.textContent = dayNames[today];
 
   const todayCourses = allCourses.filter(
     c => c.week === currentWeek && c.weekday === todayWeekday
-  );
+  ).sort((a, b) => a.periods[0] - b.periods[0]);
+
+  listEl.innerHTML = "";
 
   if (todayCourses.length === 0) {
-    courseEl.textContent = "暂无课程";
-    infoEl.textContent = "今天没有安排课程";
+    const empty = document.createElement("p");
+    empty.className = "today-empty";
+    empty.textContent = "今天没有安排课程";
+    listEl.appendChild(empty);
     return;
   }
 
-  const c = todayCourses[0];
-  courseEl.textContent = c.course;
-  infoEl.textContent =
-    `${c.location} · 第 ${c.periods[0]}-${c.periods[c.periods.length-1]} 节`;
+  todayCourses.forEach(c => {
+    const item = document.createElement("div");
+    item.className = "today-course-item";
+
+    const name = document.createElement("strong");
+    name.textContent = c.course;
+    item.appendChild(name);
+
+    const meta = document.createElement("p");
+    meta.textContent =
+      `${c.location} · 第 ${c.periods[0]}-${c.periods[c.periods.length-1]} 节`;
+    item.appendChild(meta);
+
+    listEl.appendChild(item);
+  });
 }
 
 // =========================================================
