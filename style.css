@@ -151,6 +151,7 @@ h1 {
 
 .day-header {
   font-size: 14px;
+  flex-direction: column;
 }
 
 .day-header .header-date {
