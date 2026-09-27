@@ -155,7 +155,7 @@ h1 {
 
 .day-header .header-date {
   display: block;
-  margin-top: 2px;
+  margin-bottom: 2px;
   font-size: 10px;
   font-weight: 600;
   color: #94a3b8;
@@ -716,7 +716,7 @@ h1 {
 }
 
 .today-header .header-date{
-  margin-top:2px;
+  margin-bottom:2px;
   color:#7c3aed;
   letter-spacing:0;
 }

@@ -791,8 +791,8 @@ function updateDayHeaderDates(weekCourses) {
     const date = new Date(monday);
     date.setDate(monday.getDate() + (weekday - 1));
 
-    let html = DAYS[weekday - 1];
-    html += `<small class="header-date">${String(date.getDate()).padStart(2, "0")}</small>`;
+    let html = `<small class="header-date">${String(date.getDate()).padStart(2, "0")}</small>`;
+    html += DAYS[weekday - 1];
 
     if (
       header.classList.contains("today-header") &&
