@@ -791,13 +791,18 @@ function updateDayHeaderDates(weekCourses) {
     const date = new Date(monday);
     date.setDate(monday.getDate() + (weekday - 1));
 
-    let html = `<small class="header-date">${String(date.getDate()).padStart(2, "0")}</small>`;
+    // 当天格子只显示 周几 + TODAY，不塞日期
+    const isTodayHeader =
+      header.classList.contains("today-header") &&
+      currentWeek === calculateCurrentWeek();
+
+    let html = "";
+    if (!isTodayHeader) {
+      html += `<small class="header-date">${String(date.getDate()).padStart(2, "0")}</small>`;
+    }
     html += DAYS[weekday - 1];
 
-    if (
-      header.classList.contains("today-header") &&
-      currentWeek === calculateCurrentWeek()
-    ) {
+    if (isTodayHeader) {
       html += "<small>TODAY</small>";
     }
 
