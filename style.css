@@ -153,6 +153,14 @@ h1 {
   font-size: 14px;
 }
 
+.day-header .header-date {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
 .section-label {
   position: sticky;
   left: 0;
@@ -705,6 +713,12 @@ h1 {
   display:block;
   font-size:10px;
   letter-spacing:.08em;
+}
+
+.today-header .header-date{
+  margin-top:2px;
+  color:#7c3aed;
+  letter-spacing:0;
 }
 
 

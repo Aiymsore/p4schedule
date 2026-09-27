@@ -43,6 +43,9 @@ const DAYS = [
   "周日"
 ];
 
+// 学期第 1 周周一：2026-09-07（JavaScript 月份从 0 开始，8 代表 9 月）
+const SEMESTER_START = new Date(2026, 8, 7);
+
 const TOTAL_SECTIONS = 12;
 const SKIP_INDEX_STORAGE_KEY = "p4schedule_skip_index";
 
@@ -256,7 +259,6 @@ function renderBaseGrid() {
   );
   if (todayHeader) {
     todayHeader.classList.add("today-header");
-    todayHeader.innerHTML += "<small>TODAY</small>";
   }
 
   for (let section = 1; section <= TOTAL_SECTIONS; section++) {
@@ -737,9 +739,7 @@ function clearCourseCards() {
 }
 
 function calculateCurrentWeek() {
-  // 2026 秋季学期第 1 周周一：2026-09-07
-  // JavaScript 月份从 0 开始，因此 8 代表 9 月。
-  const semesterStart = new Date(2026, 8, 7);
+  const semesterStart = new Date(SEMESTER_START);
   const today = new Date();
 
   semesterStart.setHours(0, 0, 0, 0);
@@ -752,6 +752,58 @@ function calculateCurrentWeek() {
   return clamp(week, 1, maxWeek);
 }
 
+function parseIsoDate(text) {
+  const [year, month, day] = text.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+// 表头显示所选周的日期（只显示几号），原标语处显示该周月份
+function updateDayHeaderDates(weekCourses) {
+  const eyebrow = document.querySelector(".page-header .eyebrow");
+  const headers = scheduleGrid.querySelectorAll(".day-header");
+
+  if (!headers.length) return;
+
+  // 本周周一：优先用本周课程自带的 date（与数据绝对一致），空周退回学期起点推算
+  let anchor = null;
+  weekCourses.forEach(course => {
+    if (!anchor || course.date < anchor.date) {
+      anchor = course;
+    }
+  });
+
+  let monday;
+  if (anchor) {
+    monday = parseIsoDate(anchor.date);
+    monday.setDate(monday.getDate() + (1 - anchor.weekday));
+  } else {
+    monday = new Date(SEMESTER_START);
+    monday.setDate(monday.getDate() + (currentWeek - 1) * 7);
+  }
+
+  headers.forEach(header => {
+    const weekday = Number(header.dataset.weekday);
+    const date = new Date(monday);
+    date.setDate(monday.getDate() + (weekday - 1));
+
+    let html = DAYS[weekday - 1];
+    html += `<small class="header-date">${String(date.getDate()).padStart(2, "0")}</small>`;
+
+    if (
+      header.classList.contains("today-header") &&
+      currentWeek === calculateCurrentWeek()
+    ) {
+      html += "<small>TODAY</small>";
+    }
+
+    header.innerHTML = html;
+  });
+
+  if (eyebrow) {
+    eyebrow.textContent = String(monday.getMonth() + 1);
+  }
+}
+
 function renderCurrentWeek() {
   clearCourseCards();
 
@@ -761,6 +813,7 @@ function renderCurrentWeek() {
 
   weekLabel.textContent = `第 ${currentWeek} 周`;
   renderCourses(weekCourses);
+  updateDayHeaderDates(weekCourses);
 
   prevWeekButton.disabled = currentWeek <= 1;
   nextWeekButton.disabled = currentWeek >= maxWeek;
