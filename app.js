@@ -46,6 +46,11 @@ const DAYS = [
 // 学期第 1 周周一：2026-09-07（JavaScript 月份从 0 开始，8 代表 9 月）
 const SEMESTER_START = new Date(2026, 8, 7);
 
+const CHINESE_MONTHS = [
+  "一月", "二月", "三月", "四月", "五月", "六月",
+  "七月", "八月", "九月", "十月", "十一月", "十二月"
+];
+
 const TOTAL_SECTIONS = 12;
 const SKIP_INDEX_STORAGE_KEY = "p4schedule_skip_index";
 
@@ -800,7 +805,7 @@ function updateDayHeaderDates(weekCourses) {
   });
 
   if (eyebrow) {
-    eyebrow.textContent = String(monday.getMonth() + 1);
+    eyebrow.textContent = CHINESE_MONTHS[monday.getMonth()];
   }
 }
 
