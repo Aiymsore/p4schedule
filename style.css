@@ -866,3 +866,21 @@ h1 {
     margin-top:8px;
   }
 }
+
+
+/* 账户与个人课表 */
+.account-panel { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:22px; margin-bottom:28px; }
+.account-panel h2 { font-size:21px; margin:0 0 8px; }
+.account-panel p { color:#64748b; font-size:14px; }
+.account-form { display:flex; flex-wrap:wrap; gap:12px; align-items:end; margin:16px 0; }
+.account-form label { display:flex; flex-direction:column; gap:6px; font-size:14px; flex:1 1 220px; }
+.account-panel input,.account-panel select { min-width:0; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; background:white; }
+.account-panel button { border:1px solid #cbd5e1; border-radius:8px; padding:10px 15px; background:#eef2ff; color:#312e81; cursor:pointer; }
+.account-panel button:disabled { opacity:.5; cursor:wait; }
+.account-heading,.schedule-controls { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:14px; }
+.account-heading { justify-content:space-between; }
+.account-panel summary { cursor:pointer; color:#475569; }
+#authStatus.error { color:#b91c1c; }
+#authStatus { min-height:20px; margin-bottom:0; }
+#clearScheduleButton { color:#b91c1c; background:#fff; }
+@media (max-width:600px) { .account-panel { padding:16px; } .account-form label { flex-basis:100%; } .schedule-controls select { max-width:100%; } }

@@ -1,3 +1,5 @@
+> 当前分支已升级为账户隔离版，部署和迁移请先阅读 README_ACCOUNTS.md。以下内容为历史单人版说明。
+
 # P4 Schedule 导入服务（FastAPI）
 
 网页上传 xlsx / xls / docx 课表文件 → 自适应解析 → 原子覆盖 `courses.json` → 所有访问者看到新课表。

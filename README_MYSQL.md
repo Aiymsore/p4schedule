@@ -1,3 +1,5 @@
+> 当前分支已升级为账户隔离版，部署和迁移请先阅读 README_ACCOUNTS.md。以下内容为历史单人版说明。
+
 # 本地 MySQL 课表导入
 
 网页的“导入课表”上传 xls/xlsx/docx，FastAPI 解析后写入 `p4schedule`，页面重载也从 MySQL 读取。本地服务不再读取 courses.json；GitHub Pages 在尚未配置 API_BASE 时继续读取静态 courses.json，上传会提示云端导入尚未启用。

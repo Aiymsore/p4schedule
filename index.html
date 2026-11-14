@@ -6,11 +6,40 @@
   <title>P4 SCHEDULE 4P</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo-180.png" />
-  <link rel="stylesheet" href="style.css?v=20260912" />
+  <link rel="stylesheet" href="style.css?v=accounts-20261114" />
 </head>
 <body>
 
   <main class="page">
+
+    <section class="account-panel" aria-label="个人账户">
+      <div id="signedOut">
+        <h2>登录你的课表</h2>
+        <p>每个账户独立保存课表。新用户注册后可以导入自己的 Excel。</p>
+        <form id="authForm" class="account-form">
+          <label>用户名<input id="authUsername" name="username" required minlength="3" maxlength="32" pattern="[A-Za-z0-9_]{3,32}" autocomplete="username" placeholder="3至32位字母、数字或下划线" /></label>
+          <label>密码<input id="authPassword" name="password" type="password" required minlength="12" maxlength="128" autocomplete="current-password" placeholder="12至128个字符" /></label>
+          <button type="submit" name="action" value="login">登录</button>
+          <button type="submit" name="action" value="register">注册并登录</button>
+        </form>
+      </div>
+      <div id="signedIn" class="hidden">
+        <div class="account-heading"><strong id="currentUsername"></strong><button id="logoutButton" type="button">退出登录</button></div>
+        <div class="schedule-controls">
+          <label>当前课表 <select id="scheduleSelect" aria-label="选择自己的课表"></select></label>
+          <button id="clearScheduleButton" type="button">清空当前课表</button>
+        </div>
+        <details><summary>新建另一份课表</summary>
+          <form id="newScheduleForm" class="account-form">
+            <label>课表名称<input id="newScheduleLabel" required maxlength="80" placeholder="例如：2027春季课表" /></label>
+            <label>学期第一周周一<input id="newSemesterStart" type="date" required value="2026-09-07" /></label>
+            <button type="submit">创建课表</button>
+          </form>
+        </details>
+      </div>
+      <p id="authStatus" role="status" aria-live="polite"></p>
+    </section>
+
 
     <header class="page-header">
       <div>
@@ -27,9 +56,8 @@
       <p class="semester">2026 秋季学期</p>
 
       <div class="import-area">
-        <button id="importButton" type="button">导入课表</button>
-        <input id="uploadToken" type="password" placeholder="导入口令（本地可留空）"
-          aria-label="导入口令" autocomplete="off" style="max-width:190px;padding:8px;border:1px solid #ddd;border-radius:8px" />
+        <button id="importButton" type="button" disabled>导入课表</button>
+
         <input
           id="courseFileInput"
           type="file"
@@ -225,7 +253,7 @@
 
   </main>
 
-  <script src="app.js?v=domain-20261114"></script>
+  <script src="app.js?v=accounts-20261114"></script>
 
 </body>
 </html>

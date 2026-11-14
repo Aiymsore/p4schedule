@@ -216,7 +216,7 @@ def rows_to_entries(
             entries.append(
                 {
                     "week": week,
-                    "date": derive_date(week, semester_start),
+                    "date": (date.fromisoformat(derive_date(week, semester_start)) + timedelta(days=weekday - 1)).isoformat(),
                     "weekday": weekday,
                     "weekday_name": WEEKDAY_NAMES[weekday - 1],
                     "course": course,
@@ -365,7 +365,7 @@ def parse_grid_sheet(
                 # 日期优先用表内 MM-DD；缺了就按学期起点推算。
                 # 跨年周（如秋季学期的 1 月）需要选离推算日期更近的年份
                 date_text = date_of_col.get(col)
-                expected = date.fromisoformat(derive_date(week, semester_start))
+                expected = date.fromisoformat(derive_date(week, semester_start)) + timedelta(days=weekday - 1)
                 if date_text:
                     candidates = []
                     for year in (semester_start.year, semester_start.year + 1):
@@ -425,7 +425,7 @@ def parse_sheet_rows(rows: list[list[Any]], semester_start: date | None = None) 
 # 文件级入口
 # ---------------------------------------------------------------------------
 
-def parse_xlsx(data: bytes, extension: str = ".xlsx") -> list[dict]:
+def parse_xlsx(data: bytes, extension: str = ".xlsx", semester_start: date | None = None) -> list[dict]:
     from io import BytesIO
 
     all_entries: list[dict] = []
@@ -438,7 +438,7 @@ def parse_xlsx(data: bytes, extension: str = ".xlsx") -> list[dict]:
         for sheet in book.sheets():
             rows = [sheet.row_values(row_index) for row_index in range(sheet.nrows)]
             if rows:
-                all_entries.extend(parse_sheet_rows(rows))
+                all_entries.extend(parse_sheet_rows(rows, semester_start))
     else:
         from openpyxl import load_workbook
 
@@ -446,7 +446,7 @@ def parse_xlsx(data: bytes, extension: str = ".xlsx") -> list[dict]:
         for worksheet in workbook.worksheets:
             rows = [list(row) for row in worksheet.iter_rows(values_only=True)]
             if rows:
-                all_entries.extend(parse_sheet_rows(rows))
+                all_entries.extend(parse_sheet_rows(rows, semester_start))
         workbook.close()
 
     if not all_entries:
@@ -454,7 +454,7 @@ def parse_xlsx(data: bytes, extension: str = ".xlsx") -> list[dict]:
     return all_entries
 
 
-def parse_docx(data: bytes) -> list[dict]:
+def parse_docx(data: bytes, semester_start: date | None = None) -> list[dict]:
     from docx import Document
     from io import BytesIO
 
@@ -464,19 +464,19 @@ def parse_docx(data: bytes) -> list[dict]:
     for table in document.tables:
         rows = [[cell.text for cell in row.cells] for row in table.rows]
         if rows:
-            all_entries.extend(parse_sheet_rows(rows))
+            all_entries.extend(parse_sheet_rows(rows, semester_start))
 
     if not all_entries:
         raise ParseError("Word 文档中没有可识别的表格，请使用表格形式的课表。")
     return all_entries
 
 
-def parse_file(filename: str, data: bytes) -> list[dict]:
+def parse_file(filename: str, data: bytes, semester_start: date | None = None) -> list[dict]:
     extension = os.path.splitext(filename)[1].lower()
 
     if extension in (".xlsx", ".xls"):
-        return parse_xlsx(data, extension)
+        return parse_xlsx(data, extension, semester_start)
     if extension == ".docx":
-        return parse_docx(data)
+        return parse_docx(data, semester_start)
 
     raise ParseError(f"暂不支持 {extension or '该'} 格式，请上传 xlsx / xls / docx 文件。")

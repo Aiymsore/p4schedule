@@ -1,37 +1,4 @@
-/*
-  app.js
-
-  当前数据流程：
-
-  courses.json
-      ↓ fetch()
-  JavaScript 对象
-      ↓
-  renderBaseGrid()
-      ↓
-  renderCurrentWeek()
-      ↓
-  createCourseCard()
-
-  翘课指数流程：
-
-  点击课程
-      ↓
-  openCourseDetail()
-      ↓
-  读取 localStorage
-      ↓
-  没有结果：直接显示问卷
-  已有结果：显示结果 + “重新评估”按钮
-      ↓
-  提交 10 题问卷
-      ↓
-  计算点名风险 / 缺席后果 / 自学替代性
-      ↓
-  生成 0~100 翘课指数
-      ↓
-  保存到 localStorage，并同步回课程小卡片
-*/
+/* 个人课表：登录后通过API查询MySQL；不加载共享JSON。 */
 
 const DAYS = [
   "周一",
@@ -44,7 +11,7 @@ const DAYS = [
 ];
 
 // 学期第 1 周周一：2026-09-07（JavaScript 月份从 0 开始，8 代表 9 月）
-const SEMESTER_START = new Date(2026, 8, 7);
+let SEMESTER_START = new Date(2026, 8, 7);
 
 const CHINESE_MONTHS = [
   "一月", "二月", "三月", "四月", "五月", "六月",
@@ -218,9 +185,8 @@ const importStatus = document.getElementById("importStatus");
 
 // 课表导入接口地址：空 = 同源（FastAPI 托管整站时）；
 // 前端留在 GitHub Pages 时填 VPS 地址，如 "https://your-domain.com"
-const API_BASE = "https://api.aiymsore.com";
-// 云端接口尚未配置时，GitHub Pages 继续展示静态课表。
-const STATIC_PAGES_MODE = window.location.hostname.endsWith(".github.io") && !API_BASE;
+const API_BASE = window.location.hostname.endsWith(".github.io") ? "https://api.aiymsore.com" : "";
+
 
 // =========================================================
 // 页面状态
@@ -237,14 +203,10 @@ let questionnaireIsOpen = false;
 // =========================================================
 
 async function loadCourses() {
-  const response = await fetch(STATIC_PAGES_MODE ? "./courses.json" : `${API_BASE}/api/courses`);
-
-  if (!response.ok) {
-    throw new Error(`课程数据读取失败：${response.status}`);
-  }
-
-  return await response.json();
+  if (!activeSchedule) return [];
+  return apiFetch("/api/courses?schedule_id=" + activeSchedule.id);
 }
+
 
 function renderBaseGrid() {
   const corner = document.createElement("div");
@@ -291,12 +253,16 @@ function renderBaseGrid() {
 // localStorage
 // =========================================================
 
+function personalScoreKey() {
+  return SKIP_INDEX_STORAGE_KEY + ":" + activeUser.id + ":" + activeSchedule.id;
+}
+
 function getCourseId(course) {
   return `${course.course}__${course.teacher}`;
 }
 
 function getAllSkipResults() {
-  const rawData = localStorage.getItem(SKIP_INDEX_STORAGE_KEY);
+  const rawData = localStorage.getItem(personalScoreKey());
 
   if (!rawData) {
     return {};
@@ -335,7 +301,7 @@ function saveSkipResult(course, result) {
   results[getCourseId(course)] = result;
 
   localStorage.setItem(
-    SKIP_INDEX_STORAGE_KEY,
+    personalScoreKey(),
     JSON.stringify(results)
   );
 }
@@ -794,9 +760,8 @@ function updateDayHeaderDates(weekCourses) {
     date.setDate(monday.getDate() + (weekday - 1));
 
     // 当天格子只显示 周几 + TODAY，不塞日期
-    const isTodayHeader =
-      header.classList.contains("today-header") &&
-      currentWeek === calculateCurrentWeek();
+    const isTodayHeader = date.toDateString() === new Date().toDateString();
+    header.classList.toggle("today-header", isTodayHeader);
 
     let html = "";
     if (!isTodayHeader) {
@@ -927,7 +892,7 @@ function updateTodayCard() {
   const dayEl = document.getElementById("todayDay");
   const listEl = document.getElementById("todayCourseList");
 
-  if (!dayEl || !listEl || !allCourses.length) return;
+  if (!dayEl || !listEl) return;
 
   dayEl.textContent = dayNames[today];
 
@@ -978,75 +943,245 @@ function applyCourses(courses) {
   updateTodayCard();
 }
 
+// 登录凭据仅保存在当前标签页的会话存储；不保存明文密码。
+const SESSION_KEY = "p4schedule_session_v1";
+let sessionToken = "";
+try { sessionToken = sessionStorage.getItem(SESSION_KEY) || ""; } catch (_) {}
+let activeUser = null;
+let activeSchedule = null;
+let accountSchedules = [];
+let viewGeneration = 0;
+
+function setAuthStatus(message, error = false) {
+  const element = document.getElementById("authStatus");
+  element.textContent = message;
+  element.classList.toggle("error", error);
+}
+
+function rememberToken(token) {
+  sessionToken = token;
+  try {
+    if (token) sessionStorage.setItem(SESSION_KEY, token);
+    else sessionStorage.removeItem(SESSION_KEY);
+  } catch (_) {}
+}
+
+function renderAccess() {
+  const loggedIn = Boolean(activeUser);
+  document.getElementById("signedOut").classList.toggle("hidden", loggedIn);
+  document.getElementById("signedIn").classList.toggle("hidden", !loggedIn);
+  document.querySelector(".schedule-panel").classList.toggle("hidden", !loggedIn);
+  document.querySelector(".week-switcher").classList.toggle("hidden", !loggedIn);
+  document.getElementById("todayCard").classList.toggle("hidden", !loggedIn);
+  importButton.disabled = !loggedIn || !activeSchedule;
+  document.getElementById("clearScheduleButton").disabled = !activeSchedule;
+  document.getElementById("currentUsername").textContent = loggedIn ? activeUser.username : "";
+}
+
+function clearPersonalView() {
+  viewGeneration++;
+  closeCourseDetail();
+  allCourses = [];
+  maxWeek = 1;
+  currentWeek = 1;
+  renderCurrentWeek();
+  updateTodayCard();
+  importStatus.textContent = "";
+}
+
+function clearSession() {
+  rememberToken("");
+  activeUser = null;
+  activeSchedule = null;
+  accountSchedules = [];
+  document.getElementById("scheduleSelect").replaceChildren();
+  document.querySelector(".semester").textContent = "登录后查看自己的课表";
+  clearPersonalView();
+  renderAccess();
+}
+
+async function apiFetch(path, options = {}) {
+  const requestToken = sessionToken;
+  const headers = new Headers(options.headers || {});
+  if (requestToken) headers.set("Authorization", "Bearer " + requestToken);
+  const response = await fetch(API_BASE + path, { ...options, headers, cache: "no-store" });
+  let payload;
+  try { payload = await response.json(); }
+  catch (_) { throw new Error("服务响应异常，请稍后重试"); }
+  if (!response.ok) {
+    if (response.status === 401 && requestToken === sessionToken) clearSession();
+    throw new Error(typeof payload.detail === "string" ? payload.detail : "请求失败，请检查输入");
+  }
+  return payload;
+}
+
+async function selectSchedule(id) {
+  const selected = accountSchedules.find(item => Number(item.id) === Number(id));
+  if (!selected) throw new Error("请选择自己的课表");
+  clearPersonalView();
+  activeSchedule = selected;
+  SEMESTER_START = parseIsoDate(selected.semester_start);
+  document.querySelector(".semester").textContent = selected.label + " · " + selected.semester_start + " 起";
+  renderAccess();
+  const generation = viewGeneration;
+  const courses = await loadCourses();
+  if (generation !== viewGeneration) return;
+  applyCourses(courses);
+  setAuthStatus(courses.length ? "已加载你的课表" : "这份课表还没有课程，点击“导入课表”上传 Excel。");
+}
+
+async function loadSchedules(preferredId = null) {
+  const generation = viewGeneration;
+  const items = await apiFetch("/api/schedules");
+  if (generation !== viewGeneration) return;
+  accountSchedules = items;
+  const select = document.getElementById("scheduleSelect");
+  select.replaceChildren();
+  items.forEach(item => {
+    const option = document.createElement("option");
+    option.value = item.id;
+    option.textContent = item.label;
+    select.appendChild(option);
+  });
+  const selected = items.find(item => Number(item.id) === Number(preferredId)) || items[0];
+  if (selected) {
+    select.value = selected.id;
+    await selectSchedule(selected.id);
+  } else {
+    activeSchedule = null;
+    clearPersonalView();
+    renderAccess();
+    setAuthStatus("请创建一份课表");
+  }
+}
+
+async function submitAuth(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const action = event.submitter?.value === "register" ? "register" : "login";
+  form.querySelectorAll("button").forEach(button => button.disabled = true);
+  setAuthStatus(action === "register" ? "正在注册…" : "正在登录…");
+  try {
+    const response = await fetch(API_BASE + "/api/auth/" + action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: document.getElementById("authUsername").value,
+        password: document.getElementById("authPassword").value
+      }),
+      cache: "no-store"
+    });
+    const payload = await response.json();
+    if (!response.ok) throw new Error(typeof payload.detail === "string" ? payload.detail : "账户信息格式不正确");
+    clearSession();
+    rememberToken(payload.access_token);
+    activeUser = payload.user;
+    document.getElementById("authPassword").value = "";
+    renderAccess();
+    await loadSchedules();
+  } catch (error) {
+    setAuthStatus(error.message, true);
+  } finally {
+    form.querySelectorAll("button").forEach(button => button.disabled = false);
+  }
+}
+
+async function logoutAccount() {
+  const token = sessionToken;
+  clearSession();  // 立即清掉当前屏幕和本地令牌，避免共享电脑遗留课表。
+  setAuthStatus("正在退出…");
+  try {
+    const response = await fetch(API_BASE + "/api/auth/logout", {
+      method: "POST", headers: { "Authorization": "Bearer " + token }
+    });
+    if (!response.ok && response.status !== 401) throw new Error("network");
+    setAuthStatus("已退出登录");
+  } catch (_) {
+    setAuthStatus("本机已退出；网络异常，未确认服务器会话撤销。", true);
+  }
+}
+
+async function addPersonalSchedule(event) {
+  event.preventDefault();
+  const button = event.currentTarget.querySelector("button");
+  const generation = viewGeneration;
+  button.disabled = true;
+  try {
+    const item = await apiFetch("/api/schedules", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        label: document.getElementById("newScheduleLabel").value,
+        semester_start: document.getElementById("newSemesterStart").value
+      })
+    });
+    if (generation !== viewGeneration) return;
+    document.getElementById("newScheduleLabel").value = "";
+    await loadSchedules(item.id);
+  } catch (error) { setAuthStatus(error.message, true); }
+  finally { button.disabled = false; }
+}
+
+async function clearPersonalSchedule() {
+  if (!activeSchedule || !window.confirm("确定清空“" + activeSchedule.label + "”中的所有课程？此操作不能撤销。")) return;
+  const id = activeSchedule.id;
+  const generation = viewGeneration;
+  try {
+    await apiFetch("/api/schedules/" + id + "/courses", { method: "DELETE" });
+    if (generation !== viewGeneration) return;
+    await selectSchedule(id);
+    setAuthStatus("当前课表已清空，可以重新导入。");
+  } catch (error) { setAuthStatus(error.message, true); }
+}
+
+
 async function handleImportFile(file) {
-  if (!file) {
-    return;
-  }
-
-  if (STATIC_PAGES_MODE) {
-    importStatus.textContent = "云端导入尚未启用，请先连接后端服务。";
-    importStatus.classList.add("import-error");
-    courseFileInput.value = "";
-    return;
-  }
-
+  if (!file || !activeUser || !activeSchedule) return;
+  const generation = viewGeneration;
+  const id = activeSchedule.id;
   importButton.disabled = true;
-  importStatus.textContent = "解析中…";
+  importStatus.textContent = "解析并保存中…";
   importStatus.classList.remove("import-error");
-
   try {
     const formData = new FormData();
     formData.append("file", file);
-
-    const response = await fetch(`${API_BASE}/api/parse`, {
-      method: "POST",
-      headers: {
-        "X-Upload-Token": document.getElementById("uploadToken").value
-      },
-      body: formData
+    const payload = await apiFetch("/api/parse?schedule_id=" + id, {
+      method: "POST", body: formData
     });
-
-    const payload = await response.json();
-
-    if (!response.ok) {
-      throw new Error(payload.detail || `导入失败：${response.status}`);
-    }
-
+    if (generation !== viewGeneration) return;
     applyCourses(payload.courses);
-    importStatus.textContent = `解析 ${payload.parsed_count} 条安排，新增 ${payload.added} 条，跳过 ${payload.skipped} 条重复安排`;
+    importStatus.textContent = "解析 " + payload.parsed_count + " 条，新增 " + payload.added + " 条，跳过 " + payload.skipped + " 条重复安排";
   } catch (error) {
-    console.error("课表导入失败：", error);
+    if (generation !== viewGeneration) return;
     importStatus.textContent = error.message;
     importStatus.classList.add("import-error");
   } finally {
-    importButton.disabled = false;
+    if (generation === viewGeneration) importButton.disabled = !activeUser || !activeSchedule;
     courseFileInput.value = "";
   }
 }
 
 async function main() {
   renderBaseGrid();
-
-  importButton.addEventListener("click", () => {
-    courseFileInput.click();
+  renderAccess();
+  document.getElementById("authForm").addEventListener("submit", submitAuth);
+  document.getElementById("logoutButton").addEventListener("click", logoutAccount);
+  document.getElementById("newScheduleForm").addEventListener("submit", addPersonalSchedule);
+  document.getElementById("clearScheduleButton").addEventListener("click", clearPersonalSchedule);
+  document.getElementById("scheduleSelect").addEventListener("change", async event => {
+    try { await selectSchedule(event.target.value); }
+    catch (error) { setAuthStatus(error.message, true); }
   });
-
-  courseFileInput.addEventListener("change", () => {
-    handleImportFile(courseFileInput.files[0]);
-  });
-
-  try {
-    allCourses = await loadCourses();
-    applyCourses(allCourses);
-  } catch (error) {
-    console.error("课程加载失败：", error);
-
-    const message = document.createElement("div");
-    message.className = "message";
-    message.textContent = STATIC_PAGES_MODE
-      ? "课表加载失败，请刷新页面重试。"
-      : "课程加载失败，请检查 MySQL 服务和后端终端日志。";
-    scheduleGrid.appendChild(message);
+  importButton.addEventListener("click", () => courseFileInput.click());
+  courseFileInput.addEventListener("change", () => handleImportFile(courseFileInput.files[0]));
+  if (sessionToken) {
+    try {
+      activeUser = await apiFetch("/api/auth/me");
+      renderAccess();
+      await loadSchedules();
+    } catch (error) { setAuthStatus(error.message, true); }
+  } else {
+    clearSession();
+    setAuthStatus("请登录或注册后查看自己的课表");
   }
 }
 
