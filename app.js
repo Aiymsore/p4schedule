@@ -219,6 +219,8 @@ const importStatus = document.getElementById("importStatus");
 // 课表导入接口地址：空 = 同源（FastAPI 托管整站时）；
 // 前端留在 GitHub Pages 时填 VPS 地址，如 "https://your-domain.com"
 const API_BASE = "";
+// 云端接口尚未配置时，GitHub Pages 继续展示静态课表。
+const STATIC_PAGES_MODE = window.location.hostname.endsWith(".github.io") && !API_BASE;
 
 // =========================================================
 // 页面状态
@@ -235,7 +237,7 @@ let questionnaireIsOpen = false;
 // =========================================================
 
 async function loadCourses() {
-  const response = await fetch("./courses.json");
+  const response = await fetch(STATIC_PAGES_MODE ? "./courses.json" : `${API_BASE}/api/courses`);
 
   if (!response.ok) {
     throw new Error(`课程数据读取失败：${response.status}`);
@@ -967,7 +969,7 @@ function updateTodayCard() {
 function applyCourses(courses) {
   allCourses = courses;
 
-  maxWeek = Math.max(
+  maxWeek = Math.max(1,
     ...allCourses.map(course => course.week)
   );
 
@@ -978,6 +980,13 @@ function applyCourses(courses) {
 
 async function handleImportFile(file) {
   if (!file) {
+    return;
+  }
+
+  if (STATIC_PAGES_MODE) {
+    importStatus.textContent = "云端导入尚未启用，请先连接后端服务。";
+    importStatus.classList.add("import-error");
+    courseFileInput.value = "";
     return;
   }
 
@@ -1001,7 +1010,7 @@ async function handleImportFile(file) {
     }
 
     applyCourses(payload.courses);
-    importStatus.textContent = `已导入 ${payload.count} 条课程`;
+    importStatus.textContent = `解析 ${payload.parsed_count} 条安排，新增 ${payload.added} 条，跳过 ${payload.skipped} 条重复安排`;
   } catch (error) {
     console.error("课表导入失败：", error);
     importStatus.textContent = error.message;
@@ -1031,7 +1040,9 @@ async function main() {
 
     const message = document.createElement("div");
     message.className = "message";
-    message.textContent = "课程加载失败，请检查 courses.json 是否存在。";
+    message.textContent = STATIC_PAGES_MODE
+      ? "课表加载失败，请刷新页面重试。"
+      : "课程加载失败，请检查 MySQL 服务和后端终端日志。";
     scheduleGrid.appendChild(message);
   }
 }

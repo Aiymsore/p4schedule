@@ -4,3 +4,8 @@
 # Python 缓存
 __pycache__/
 .pytest_cache/
+
+# 本地迁移备份与私有配置
+backup_before_mysql_web_*/
+.env
+.env.*

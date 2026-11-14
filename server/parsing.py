@@ -278,9 +278,13 @@ def parse_grid_cell(cell_text_value: str) -> dict | None:
     periods: list[int] = []
     period_line_index = -1
     for index, line in enumerate(lines[1:], start=1):
-        match = re.fullmatch(r"\d+-(\d{2})(\d{2})", line)
+        match = re.fullmatch(r"\d+-((?:\d{2})+)", line)
         if match:
-            periods = sorted({int(match.group(1)), int(match.group(2))})
+            digits = match.group(1)
+            periods = [int(digits[i:i + 2]) for i in range(0, len(digits), 2)]
+            if (not 1 <= periods[0] <= periods[-1] <= MAX_PERIODS
+                    or periods != list(range(periods[0], periods[-1] + 1))):
+                raise ParseError(f"不支持的连续节次：{line}")
             period_line_index = index
             break
 
