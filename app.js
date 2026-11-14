@@ -218,7 +218,7 @@ const importStatus = document.getElementById("importStatus");
 
 // 课表导入接口地址：空 = 同源（FastAPI 托管整站时）；
 // 前端留在 GitHub Pages 时填 VPS 地址，如 "https://your-domain.com"
-const API_BASE = "";
+const API_BASE = "https://bread-sales-entrance-pins.trycloudflare.com";
 // 云端接口尚未配置时，GitHub Pages 继续展示静态课表。
 const STATIC_PAGES_MODE = window.location.hostname.endsWith(".github.io") && !API_BASE;
 
