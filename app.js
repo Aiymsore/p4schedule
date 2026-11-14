@@ -1000,6 +1000,9 @@ async function handleImportFile(file) {
 
     const response = await fetch(`${API_BASE}/api/parse`, {
       method: "POST",
+      headers: {
+        "X-Upload-Token": document.getElementById("uploadToken").value
+      },
       body: formData
     });
 

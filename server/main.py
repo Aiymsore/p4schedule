@@ -1,14 +1,22 @@
 """本地启动：python -m uvicorn main:app --host 127.0.0.1 --port 8000"""
 import logging
+import os
+import secrets
 from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from database import import_courses, read_courses
 from parsing import ParseError, parse_file
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 app = FastAPI(title="P4 Schedule MySQL Import API")
+ALLOWED_ORIGINS = [s.strip().rstrip("/") for s in os.environ.get("ALLOWED_ORIGINS", "").split(",") if s.strip()]
+app.add_middleware(
+    CORSMiddleware, allow_origins=ALLOWED_ORIGINS,
+    allow_methods=["GET", "POST"], allow_headers=["X-Upload-Token", "Content-Type"],
+)
 logger = logging.getLogger(__name__)
 
 
@@ -24,8 +32,16 @@ def get_courses():
 @app.post("/api/parse")
 def parse_upload(request: Request, file: UploadFile = File(...)):
     origin = request.headers.get("origin")
-    if origin and origin.rstrip("/") != str(request.base_url).rstrip("/"):
-        raise HTTPException(403, "请从本机课表页面上传")
+    if (origin and origin.rstrip("/") != str(request.base_url).rstrip("/")
+            and origin.rstrip("/") not in ALLOWED_ORIGINS):
+        raise HTTPException(403, "此网页来源未获允许")
+    token = os.environ.get("UPLOAD_TOKEN", "")
+    if ALLOWED_ORIGINS and not token:
+        raise HTTPException(503, "云端上传尚未配置导入口令")
+    if token and not secrets.compare_digest(
+        request.headers.get("X-Upload-Token", "").encode("utf-8"), token.encode("utf-8")
+    ):
+        raise HTTPException(401, "导入口令不正确，请重新输入")
     data = file.file.read(10 * 1024 * 1024 + 1)
     if not data:
         raise HTTPException(400, "上传文件为空")

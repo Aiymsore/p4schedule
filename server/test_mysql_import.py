@@ -70,6 +70,8 @@ def test_frontend_data_shape(monkeypatch):
 
 
 def test_upload_and_read_routes(monkeypatch):
+    monkeypatch.delenv("UPLOAD_TOKEN", raising=False)
+    monkeypatch.setattr(main, "ALLOWED_ORIGINS", [])
     saved = []
     monkeypatch.setattr(main, "parse_file", lambda name, data: [entry()])
     def save(entries):
@@ -92,3 +94,24 @@ def test_upload_and_read_routes(monkeypatch):
     with pytest.raises(HTTPException) as error:
         main.parse_upload(request, UploadFile(BytesIO(b"example"), filename="test.xls"))
     assert error.value.status_code == 403
+
+
+def test_cloud_upload_requires_token(monkeypatch):
+    monkeypatch.setattr(main, "ALLOWED_ORIGINS", ["https://aiymsore.github.io"])
+    scope = {"type": "http", "scheme": "https", "path": "/api/parse",
+             "headers": [(b"origin", b"https://aiymsore.github.io")],
+             "server": ("example.trycloudflare.com", 443)}
+    monkeypatch.delenv("UPLOAD_TOKEN", raising=False)
+    with pytest.raises(HTTPException) as error:
+        main.parse_upload(Request(scope), UploadFile(BytesIO(b"example"), filename="test.xls"))
+    assert error.value.status_code == 503
+    monkeypatch.setenv("UPLOAD_TOKEN", "test-only-key")
+    with pytest.raises(HTTPException) as error:
+        main.parse_upload(Request(scope), UploadFile(BytesIO(b"example"), filename="test.xls"))
+    assert error.value.status_code == 401
+    scope["headers"] = scope["headers"] + [(b"x-upload-token", b"test-only-key")]
+    monkeypatch.setattr(main, "parse_file", lambda name, data: [entry()])
+    monkeypatch.setattr(main, "import_courses", lambda entries: {"parsed_count": 1, "added": 0, "skipped": 1})
+    monkeypatch.setattr(main, "read_courses", lambda: [entry()])
+    result = main.parse_upload(Request(scope), UploadFile(BytesIO(b"example"), filename="test.xls"))
+    assert result["skipped"] == 1
