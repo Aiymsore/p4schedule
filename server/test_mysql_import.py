@@ -19,7 +19,7 @@ from security import hash_password,verify_password,token_digest
 SCHEMA="""
 CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL);
 CREATE TABLE schedules(id INTEGER PRIMARY KEY AUTOINCREMENT,user_id INTEGER NOT NULL REFERENCES users(id),
- label TEXT NOT NULL,semester_start DATE NOT NULL,UNIQUE(user_id,label));
+ label TEXT NOT NULL,semester_start DATE NOT NULL,cache_version INTEGER NOT NULL DEFAULT 1,UNIQUE(user_id,label));
 CREATE TABLE courses(id INTEGER PRIMARY KEY AUTOINCREMENT,schedule_id INTEGER NOT NULL REFERENCES schedules(id),
  name TEXT NOT NULL,teacher TEXT,location TEXT);
 CREATE TABLE course_sessions(id INTEGER PRIMARY KEY AUTOINCREMENT,course_id INTEGER NOT NULL REFERENCES courses(id),
@@ -69,6 +69,7 @@ class Connection:
 
 @pytest.fixture
 def site(monkeypatch):
+    monkeypatch.delenv("REDIS_URL", raising=False)
     uri="file:accounts_"+uuid.uuid4().hex+"?mode=memory&cache=shared"
     keeper=sqlite3.connect(uri,uri=True,detect_types=sqlite3.PARSE_DECLTYPES,check_same_thread=False)
     keeper.row_factory=sqlite3.Row

@@ -11,6 +11,7 @@ ACCOUNT_TABLES = [
         user_id INT UNSIGNED NOT NULL,
         label VARCHAR(80) NOT NULL,
         semester_start DATE NOT NULL,
+        cache_version BIGINT UNSIGNED NOT NULL DEFAULT 1,
         created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
         CONSTRAINT fk_schedules_user FOREIGN KEY (user_id) REFERENCES users(id),
         UNIQUE KEY uq_user_schedule (user_id, label)

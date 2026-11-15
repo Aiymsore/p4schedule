@@ -1,8 +1,9 @@
 """按登录用户和课表隔离读写。所有归属检查均在服务器执行。"""
 import os
 import re
-from datetime import date
+from datetime import date, timedelta
 import pymysql
+import course_cache
 
 
 class ScheduleNotFound(Exception):
@@ -24,9 +25,9 @@ def connect():
 
 def owned_schedule(cursor, user_id, schedule_id):
     if schedule_id is None:
-        cursor.execute("SELECT id,label,semester_start FROM schedules WHERE user_id=%s ORDER BY id LIMIT 1", (user_id,))
+        cursor.execute("SELECT id,label,semester_start,cache_version FROM schedules WHERE user_id=%s ORDER BY id LIMIT 1", (user_id,))
     else:
-        cursor.execute("SELECT id,label,semester_start FROM schedules WHERE id=%s AND user_id=%s", (schedule_id, user_id))
+        cursor.execute("SELECT id,label,semester_start,cache_version FROM schedules WHERE id=%s AND user_id=%s", (schedule_id, user_id))
     row = cursor.fetchone()
     if not row:
         raise ScheduleNotFound()
@@ -71,17 +72,33 @@ def create_schedule(user_id, label, start):
         connection.close()
 
 
-def read_courses(user_id, schedule_id=None):
+def read_courses(user_id, schedule_id=None, week=None, cache_info=None):
+    if week is not None and (type(week) is not int or not 1 <= week <= 60):
+        raise ValueError("周次需为1至60")
     connection = connect()
     try:
         with connection.cursor() as cursor:
             schedule = owned_schedule(cursor, user_id, schedule_id)
-            cursor.execute("""SELECT s.id, c.name, c.teacher, s.class_date,
+            # 即使命中缓存，也先向MySQL确认归属与最新版本，不能绕过授权。
+            cache_key = course_cache.key(user_id, schedule["id"], schedule["cache_version"], week)
+            cached, state = course_cache.read(cache_key)
+            if cache_info is not None:
+                cache_info["status"] = state
+            if cached is not None:
+                return cached
+            sql = """SELECT s.id, c.name, c.teacher, s.class_date,
                 s.start_period, s.end_period, s.location
                 FROM courses c JOIN course_sessions s ON c.id=s.course_id
                 JOIN schedules t ON t.id=c.schedule_id
                 WHERE t.id=%s AND t.user_id=%s
-                ORDER BY s.class_date, s.start_period, s.id""", (schedule["id"],user_id))
+            """
+            params = [schedule["id"], user_id]
+            if week is not None:
+                first = schedule["semester_start"] + timedelta(weeks=week - 1)
+                sql += " AND s.class_date >= %s AND s.class_date < %s"
+                params.extend([first, first + timedelta(days=7)])
+            sql += " ORDER BY s.class_date, s.start_period, s.id"
+            cursor.execute(sql, tuple(params))
             rows = cursor.fetchall()
         start = schedule["semester_start"]
         entries = []
@@ -101,6 +118,9 @@ def read_courses(user_id, schedule_id=None):
                 "periods": periods, "period_code": f"{periods[0]:02d}{periods[-1]:02d}",
                 "source_week": week, "big_sections": sorted({(p+1)//2 for p in periods}),
             })
+        # 同一次MySQL快照下读取的旧数据只会写到旧版本键，不覆盖新版本。
+        if state != "BYPASS" and not course_cache.write(cache_key, entries) and cache_info is not None:
+            cache_info["status"] = "BYPASS"
         return entries
     finally:
         connection.close()
@@ -172,6 +192,9 @@ def import_courses(entries, user_id, schedule_id):
                         (course_id,class_date,start_period,end_period,location)
                         VALUES (%s,%s,%s,%s,%s)""",values)
                     added+=1
+            if added:
+                cursor.execute("UPDATE schedules SET cache_version=cache_version+1 WHERE id=%s AND user_id=%s",
+                               (schedule["id"], user_id))
         connection.commit()
         return {"parsed_count":len(records),"added":added,"skipped":skipped}
     except Exception:
@@ -192,6 +215,8 @@ def clear_schedule(user_id,schedule_id):
                 (SELECT id FROM courses WHERE schedule_id=%s)""",(schedule["id"],))
             deleted=cursor.rowcount
             cursor.execute("DELETE FROM courses WHERE schedule_id=%s",(schedule["id"],))
+            cursor.execute("UPDATE schedules SET cache_version=cache_version+1 WHERE id=%s AND user_id=%s",
+                           (schedule["id"], user_id))
         connection.commit()
         return {"deleted":deleted}
     except Exception:

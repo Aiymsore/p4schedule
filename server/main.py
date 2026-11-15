@@ -4,7 +4,7 @@ import os
 from datetime import date
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile
+from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
@@ -23,7 +23,7 @@ app=FastAPI(title="P4 Schedule Account API")
 ALLOWED_ORIGINS=[s.strip().rstrip("/") for s in os.environ.get("ALLOWED_ORIGINS","").split(",") if s.strip()]
 app.add_middleware(CORSMiddleware,allow_origins=ALLOWED_ORIGINS,
                    allow_methods=["GET","POST","DELETE"],
-                   allow_headers=["Authorization","Content-Type"])
+                   allow_headers=["Authorization","Content-Type"], expose_headers=["X-Cache"])
 logger=logging.getLogger(__name__)
 bearer=HTTPBearer(auto_error=False)
 
@@ -149,8 +149,12 @@ def add_schedule(body: ScheduleInput,user=Depends(user_from_credentials)):
 
 
 @app.get("/api/courses")
-def courses(schedule_id: int | None=Query(None,gt=0),user=Depends(user_from_credentials)):
-    return database.read_courses(user["id"],schedule_id)
+def courses(response: Response, schedule_id: int | None=Query(None,gt=0),
+            week: int | None=Query(None,ge=1,le=60),user=Depends(user_from_credentials)):
+    info = {}
+    result = database.read_courses(user["id"],schedule_id,week,info)
+    response.headers["X-Cache"] = info.get("status", "BYPASS")
+    return result
 
 
 @app.delete("/api/schedules/{schedule_id}/courses")
