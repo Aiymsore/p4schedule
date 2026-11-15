@@ -63,7 +63,7 @@ async def too_many_requests(request,error):
 class Credentials(BaseModel):
     model_config=ConfigDict(extra="forbid")
     username: str=Field(min_length=3,max_length=32)
-    password: SecretStr=Field(min_length=12,max_length=128)
+    password: SecretStr=Field(min_length=6,max_length=128)
 
 
 class ScheduleInput(BaseModel):

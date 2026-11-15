@@ -15,8 +15,8 @@ def normalize_username(username):
 
 
 def hash_password(password):
-    if not 12 <= len(password) <= 128:
-        raise ValueError("密码长度需为12至128个字符")
+    if not 6 <= len(password) <= 128:
+        raise ValueError("密码长度需为6至128个字符")
     salt = secrets.token_hex(16)
     digest = hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), bytes.fromhex(salt), ITERATIONS)
     return f"pbkdf2_sha256${ITERATIONS}${salt}${digest.hex()}"

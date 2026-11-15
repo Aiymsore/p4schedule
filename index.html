@@ -18,7 +18,7 @@
         <p>每个账户独立保存课表。新用户注册后可以导入自己的 Excel。</p>
         <form id="authForm" class="account-form">
           <label>用户名<input id="authUsername" name="username" required minlength="3" maxlength="32" pattern="[A-Za-z0-9_]{3,32}" autocomplete="username" placeholder="3至32位字母、数字或下划线" /></label>
-          <label>密码<input id="authPassword" name="password" type="password" required minlength="12" maxlength="128" autocomplete="current-password" placeholder="12至128个字符" /></label>
+          <label>密码<input id="authPassword" name="password" type="password" required minlength="6" maxlength="128" autocomplete="current-password" placeholder="6至128个字符" /></label>
           <button type="submit" name="action" value="login">登录</button>
           <button type="submit" name="action" value="register">注册并登录</button>
         </form>
