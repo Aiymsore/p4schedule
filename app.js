@@ -183,11 +183,6 @@ const importButton = document.getElementById("importButton");
 const courseFileInput = document.getElementById("courseFileInput");
 const importStatus = document.getElementById("importStatus");
 
-// 课表导入接口地址：空 = 同源（FastAPI 托管整站时）；
-// 前端留在 GitHub Pages 时填 VPS 地址，如 "https://your-domain.com"
-const API_BASE = window.location.hostname.endsWith(".github.io") ? "https://api.aiymsore.com" : "";
-
-
 // =========================================================
 // 页面状态
 // =========================================================
@@ -943,10 +938,6 @@ function applyCourses(courses) {
   updateTodayCard();
 }
 
-// 登录凭据仅保存在当前标签页的会话存储；不保存明文密码。
-const SESSION_KEY = "p4schedule_session_v1";
-let sessionToken = "";
-try { sessionToken = sessionStorage.getItem(SESSION_KEY) || ""; } catch (_) {}
 let activeUser = null;
 let activeSchedule = null;
 let accountSchedules = [];
@@ -956,14 +947,6 @@ function setAuthStatus(message, error = false) {
   const element = document.getElementById("authStatus");
   element.textContent = message;
   element.classList.toggle("error", error);
-}
-
-function rememberToken(token) {
-  sessionToken = token;
-  try {
-    if (token) sessionStorage.setItem(SESSION_KEY, token);
-    else sessionStorage.removeItem(SESSION_KEY);
-  } catch (_) {}
 }
 
 function renderAccess() {
@@ -990,7 +973,6 @@ function clearPersonalView() {
 }
 
 function clearSession() {
-  rememberToken("");
   activeUser = null;
   activeSchedule = null;
   accountSchedules = [];
@@ -1001,15 +983,13 @@ function clearSession() {
 }
 
 async function apiFetch(path, options = {}) {
-  const requestToken = sessionToken;
-  const headers = new Headers(options.headers || {});
-  if (requestToken) headers.set("Authorization", "Bearer " + requestToken);
-  const response = await fetch(API_BASE + path, { ...options, headers, cache: "no-store" });
+  const requestGeneration = viewGeneration;
+  const response = await fetch(path, { ...options, cache: "no-store" });
   let payload;
   try { payload = await response.json(); }
   catch (_) { throw new Error("服务响应异常，请稍后重试"); }
   if (!response.ok) {
-    if (response.status === 401 && requestToken === sessionToken) clearSession();
+    if (response.status === 401 && requestGeneration === viewGeneration) clearSession();
     throw new Error(typeof payload.detail === "string" ? payload.detail : "请求失败，请检查输入");
   }
   return payload;
@@ -1062,7 +1042,7 @@ async function submitAuth(event) {
   form.querySelectorAll("button").forEach(button => button.disabled = true);
   setAuthStatus(action === "register" ? "正在注册…" : "正在登录…");
   try {
-    const response = await fetch(API_BASE + "/api/auth/" + action, {
+    const response = await fetch("/api/auth/" + action + "?cookie=true", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -1074,7 +1054,6 @@ async function submitAuth(event) {
     const payload = await response.json();
     if (!response.ok) throw new Error(typeof payload.detail === "string" ? payload.detail : "账户信息格式不正确");
     clearSession();
-    rememberToken(payload.access_token);
     activeUser = payload.user;
     document.getElementById("authPassword").value = "";
     renderAccess();
@@ -1087,17 +1066,13 @@ async function submitAuth(event) {
 }
 
 async function logoutAccount() {
-  const token = sessionToken;
-  clearSession();  // 立即清掉当前屏幕和本地令牌，避免共享电脑遗留课表。
   setAuthStatus("正在退出…");
   try {
-    const response = await fetch(API_BASE + "/api/auth/logout", {
-      method: "POST", headers: { "Authorization": "Bearer " + token }
-    });
-    if (!response.ok && response.status !== 401) throw new Error("network");
+    await apiFetch("/api/auth/logout", { method: "POST" });
+    clearSession();
     setAuthStatus("已退出登录");
-  } catch (_) {
-    setAuthStatus("本机已退出；网络异常，未确认服务器会话撤销。", true);
+  } catch (error) {
+    setAuthStatus(error.message, true);
   }
 }
 
@@ -1173,15 +1148,12 @@ async function main() {
   });
   importButton.addEventListener("click", () => courseFileInput.click());
   courseFileInput.addEventListener("change", () => handleImportFile(courseFileInput.files[0]));
-  if (sessionToken) {
-    try {
-      activeUser = await apiFetch("/api/auth/me");
-      renderAccess();
-      await loadSchedules();
-    } catch (error) { setAuthStatus(error.message, true); }
-  } else {
-    clearSession();
-    setAuthStatus("请登录或注册后查看自己的课表");
+  try {
+    activeUser = await apiFetch("/api/auth/me");
+    renderAccess();
+    await loadSchedules();
+  } catch (error) {
+    setAuthStatus(error.message, true);
   }
 }
 

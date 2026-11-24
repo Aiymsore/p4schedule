@@ -28,6 +28,42 @@ logger=logging.getLogger(__name__)
 bearer=HTTPBearer(auto_error=False)
 
 
+SESSION_COOKIE = "p4schedule_session"
+COOKIE_SECURE = os.environ.get("SCHEDULE_COOKIE_SECURE", "0") == "1"
+COOKIE_ORIGIN = os.environ.get("SCHEDULE_COOKIE_ORIGIN", "http://127.0.0.1:8000").rstrip("/")
+
+
+def verify_cookie_origin(request: Request):
+    if request.headers.get("origin") != COOKIE_ORIGIN:
+        raise HTTPException(403, "请求来源不受信任")
+
+
+def login_result(result, response: Response, cookie: bool):
+    if not cookie:
+        return result
+    response.set_cookie(
+        key=SESSION_COOKIE,
+        value=result["access_token"],
+        max_age=result["expires_in"],
+        httponly=True,
+        secure=COOKIE_SECURE,
+        samesite="lax",
+        path="/",
+    )
+    return {"user": result["user"]}
+
+
+def session_token(request: Request, credentials=Depends(bearer)):
+    token = request.cookies.get(SESSION_COOKIE)
+    if token:
+        if request.method not in {"GET", "HEAD", "OPTIONS"}:
+            verify_cookie_origin(request)
+        return token
+    if credentials is None:
+        raise HTTPException(401, "请先登录", headers={"WWW-Authenticate": "Bearer"})
+    return credentials.credentials
+
+
 @app.exception_handler(RequestValidationError)
 async def invalid_input(request,error):
     # 不将请求中的密码或完整输入回显到错误响应。
@@ -88,11 +124,9 @@ class ScheduleInput(BaseModel):
         return value
 
 
-def user_from_credentials(credentials: HTTPAuthorizationCredentials | None=Depends(bearer)):
-    if credentials is None or credentials.scheme.lower()!="bearer":
-        raise HTTPException(401,"请先登录",headers={"WWW-Authenticate":"Bearer"})
+def user_from_credentials(token: str = Depends(session_token)):
     try:
-        return auth.authenticate(credentials.credentials)
+        return auth.authenticate(token)
     except auth.InvalidLogin:
         raise HTTPException(401,"登录已过期，请重新登录",headers={"WWW-Authenticate":"Bearer"})
 
@@ -105,10 +139,13 @@ def limit(request,action,username=None):
 
 
 @app.post("/api/auth/register",status_code=201)
-def register(body: Credentials,request: Request):
+def register(body: Credentials, request: Request, response: Response, cookie: bool = False):
+    if cookie:
+        verify_cookie_origin(request)
     limit(request,"register")
     try:
-        return auth.register(body.username,body.password.get_secret_value())
+        result = auth.register(body.username, body.password.get_secret_value())
+        return login_result(result, response, cookie)
     except auth.UsernameTaken:
         raise HTTPException(409,"用户名已被使用")
     except ValueError as error:
@@ -116,10 +153,13 @@ def register(body: Credentials,request: Request):
 
 
 @app.post("/api/auth/login")
-def login(body: Credentials,request: Request):
+def login(body: Credentials, request: Request, response: Response, cookie: bool = False):
+    if cookie:
+        verify_cookie_origin(request)
     limit(request,"login",body.username)
     try:
-        return auth.login(body.username,body.password.get_secret_value())
+        result = auth.login(body.username, body.password.get_secret_value())
+        return login_result(result, response, cookie)
     except (auth.InvalidLogin,ValueError):
         raise HTTPException(401,"用户名或密码不正确")
 
@@ -130,8 +170,9 @@ def me(user=Depends(user_from_credentials)):
 
 
 @app.post("/api/auth/logout")
-def logout(credentials: HTTPAuthorizationCredentials=Depends(bearer),user=Depends(user_from_credentials)):
-    auth.logout(credentials.credentials)
+def logout(response: Response, token: str = Depends(session_token)):
+    auth.logout(token)
+    response.delete_cookie(SESSION_COOKIE, path="/", httponly=True, secure=COOKIE_SECURE, samesite="lax")
     return {"message":"已退出登录"}
 
 
